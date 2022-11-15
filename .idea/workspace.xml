@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dfa11ae8-6ed2-4d15-aedd-08726046dc1e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/enumeration/DbType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/exception/FastsqlColumnAmbiguousException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/exception/FastsqlException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/SQLUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/AutoIncrementType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/ClusteringType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLAdhocTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLAnnIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLArgument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLArrayDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLCommentHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLCurrentTimeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLCurrentUserExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLDataTypeImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLDataTypeRefExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLDbTypedObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLDeclareItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLExprComparor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLExprImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLIndexDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLIndexOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLKeep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLLimit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLMapDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLObjectImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLObjectWithDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLOrderBy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLOrderingSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLOver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLPartitionBy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLPartitionByHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLPartitionByList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLPartitionByRange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLPartitionByValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLPartitionSpec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLPartitionValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLRecordDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLReplaceable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLRowDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLSetQuantifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLStatementImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLStructDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLSubPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLSubPartitionBy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLSubPartitionByHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLSubPartitionByList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLSubPartitionByRange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLUnionDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/SQLZOrderBy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/TDDLHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLAggregateExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLAggregateOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLAllColumnExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLAllExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLAnyExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLArrayExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLBetweenExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLBigIntExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLBinaryExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLBinaryOpExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLBinaryOpExprGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLBinaryOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLBooleanExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCaseExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCaseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCastExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLContainsExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCurrentOfCursorExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLDateExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLDateTimeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLDbLinkExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLDecimalExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLDefaultExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLDoubleExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLExistsExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLExprUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLExtractExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLFlashbackExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLFloatExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLGroupingSetExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLHexExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLIdentifierExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLInListExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLInSubQueryExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLIntegerExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLIntervalExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLIntervalUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLJSONExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLListExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLLiteralExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLMatchAgainstExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLMethodInvokeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLNCharExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLNotExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLNullExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLNumberExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLNumericLiteralExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLPropertyExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLQueryExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLRealExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLSequenceExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLSizeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLSmallIntExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLSomeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLTextLiteralExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLTimeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLTimestampExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLTinyIntExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLUnaryExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLUnaryOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLValuableExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLValuesExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLVariantRefExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterCharacter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterDatabaseItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterDatabaseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterFunctionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterIndexStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterMaterializedViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterOutlineStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterProcedureStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterSequenceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterSystemGetConfigStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterSystemSetConfigStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAddClusteringKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAddColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAddConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAddExtPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAddIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAddPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAddSupplemental.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAlterColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAlterIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableAnalyzePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableArchivePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableBlockSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableCheckPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableCoalescePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableCompression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableConvertCharSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDeleteByCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDisableConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDisableKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDisableLifecycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDiscardPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropClusteringKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropColumnItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropExtPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropForeignKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropPrimaryKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableDropSubpartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableEnableConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableEnableKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableEnableLifecycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableExchangePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableImportPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableMergePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableModifyClusteredBy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableOptimizePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTablePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTablePartitionCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTablePartitionLifecycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTablePartitionSetProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableReOrganizePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableRebuildPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableRecoverPartitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableRename.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableRenameColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableRenameIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableRenamePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableRepairPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableReplaceColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableSetComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableSetLifecycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableSetLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableSetOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableSubpartitionAvailablePartitionNum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableSubpartitionLifecycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableTouch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableTruncatePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTableUnarchivePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterTypeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterViewRenameStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAlterViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAnalyzeTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLArchiveTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLAssignItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLBackupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLBlockStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLBuildTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCallStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCancelJobStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCharacterDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCloseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLColumnCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLColumnConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLColumnDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLColumnPrimaryKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLColumnReference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLColumnUniqueKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCommentStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCommitStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLConstraintImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCopyFromStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateDatabaseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateFunctionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateIndexStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateMaterializedViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateOutlineStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateProcedureStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateRoleStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateSequenceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateTableGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateTriggerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateUserStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLCreateViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDDLStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDeclareStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDefault.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDeleteStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDescribeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropCatalogStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropDatabaseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropEventStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropFunctionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropIndexStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropLogFileGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropMaterializedViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropOutlineStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropProcedureStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropResourceGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropResourceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropRoleStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropSequenceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropServerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropSynonymStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropTableGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropTableSpaceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropTriggerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropTypeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropUserStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDropViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLDumpStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLErrorLoggingClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLExplainAnalyzeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLExplainStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLExportDatabaseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLExprHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLExprStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLExprTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLExternalRecordFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLFetchStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLForStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLForeignKeyConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLForeignKeyImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLGrantStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLIfStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLImportDatabaseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLInsertInto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLInsertStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLJoinTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLLateralViewTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLLockTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLLoopStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLMergeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLNotNullConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLNullConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLObjectType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLOpenStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPartitionRef.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPrimaryKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPrimaryKeyImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPrivilegeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPrivilegeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPurgeLogsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPurgeRecyclebinStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPurgeTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLPurgeTemporaryOutputStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLRefreshMaterializedViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLReleaseSavePointStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLRenameUserStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLReplaceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLRestoreStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLReturnStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLRevokeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLRollbackStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSavePointStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLScriptCommitStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSelect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSelectGroupByClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSelectItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSelectOrderByItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSelectQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSelectQueryBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSelectStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSetStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowCatalogsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowColumnsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowCreateMaterializedViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowCreateTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowCreateViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowDatabasesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowErrorsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowFunctionsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowGrantsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowIndexesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowMaterializedViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowOutlinesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowPackagesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowProcessListStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowQueryTaskStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowRecylebinStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowSessionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowTableGroupsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowTablesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowUsersStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLShowViewsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLStartTransactionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSubmitJobStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSubqueryTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLSyncMetaStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLTableConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLTableElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLTableLike.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLTableSampling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLTableSourceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLTruncateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUnionOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUnionQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUnionQueryTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUnique.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUniqueConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUnnestTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUpdateSetItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUpdateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLUseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLValuesQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLValuesTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLWhileStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLWhoamiStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/statement/SQLWithSubqueryClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/ads/parser/AdsCreateTableParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/ads/parser/AdsExprParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/ads/parser/AdsLexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/ads/parser/AdsSelectParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/ads/parser/AdsStatementParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/ads/visitor/AdsOutputVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/ads/visitor/AdsVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/AnalyzerIndexType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/FullTextType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlForceIndexHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlIgnoreIndexHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlIndexHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlIndexHintImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlObjectImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlPrimaryKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlUnique.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MySqlUseIndexHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/MysqlForeignKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/ConditionValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlCaseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlCursorDeclareStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlDeclareConditionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlDeclareHandlerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlDeclareStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlHandlerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlIterateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlLeaveStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlRepeatStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/clause/MySqlSelectIntoStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/expr/MySqlCharExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/expr/MySqlExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/expr/MySqlExprImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/expr/MySqlJSONTableExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/expr/MySqlOrderingExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/expr/MySqlOutFileExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/expr/MySqlUserName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/CobarShowStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsBaselineStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsCancelDDLJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsChangeDDLJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsClearDDLJobCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsInspectDDLJobCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsRecoverDDLJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsRemoveDDLJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsRollbackDDLJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsShowDDLJobs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsShowGlobalIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/DrdsShowMetadataLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterDatabaseKillJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterDatabaseSetOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterEventStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterLogFileGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterServerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableAlterColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableAlterFullTextIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableChangeColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableDiscardTablespace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableForce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableImportTablespace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableModifyColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableOrderBy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTableValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterTablespaceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAlterUserStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlAnalyzeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlBinlogStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlCheckTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlChecksumTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlClearPlanCacheStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlCreateAddLogFileGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlCreateEventStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlCreateExternalCatalogStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlCreateServerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlCreateTableSpaceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlCreateTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlCreateUserStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlDeleteStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlDisabledPlanCacheStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlEventSchedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlExecuteForAdsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlExecuteStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlExplainPlanCacheStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlExplainStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlExtPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlFlashbackStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlFlushStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlHelpStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlHintStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlInsertStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlKillStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlLoadDataInFileStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlLoadXmlStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlLockTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlManageInstanceGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlMigrateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlOptimizeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlPartitionByKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlPrepareStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlRaftLeaderTransferStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlRaftMemberChangeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlRenameSequenceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlRenameTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlResetStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlSelectQueryBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlSetTransactionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowAuthorsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowBinLogEventsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowBinaryLogsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowBroadcastsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowCharacterSetStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowClusterNameStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowCollationStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowConfigStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowContributorsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowCreateDatabaseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowCreateEventStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowCreateFunctionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowCreateProcedureStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowCreateTriggerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowDatabaseStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowDatasourcesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowDdlStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowDsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowEngineStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowEnginesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowErrorsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowEventsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowFunctionCodeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowFunctionStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowGrantsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowHMSMetaStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowHelpStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowJobStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowMasterLogsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowMasterStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowMigrateTaskStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowNodeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowOpenTablesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowPartitionsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowPhysicalProcesslistStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowPlanCacheStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowPlanCacheStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowPluginsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowPrivilegesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowProcedureCodeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowProcedureStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowProcessListStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowProfileStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowProfilesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowRelayLogEventsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowRuleStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowRuleStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowSequencesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowSlaveHostsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowSlaveStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowSlowStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowTableStatusStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowTopologyStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowTraceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowTriggersStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowVariantsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlShowWarningsStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlStatementImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlSubPartitionByKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlSubPartitionByList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlSubPartitionByValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlTableIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlUnlockTablesStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlUpdatePlanCacheStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlUpdateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MySqlUpdateTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlAlterFullTextStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlAlterTableAlterCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlCreateFullTextAnalyzerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlCreateFullTextCharFilterStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlCreateFullTextDictionaryStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlCreateFullTextTokenFilterStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlCreateFullTextTokenizerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlDeallocatePrepareStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlDropFullTextStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlShowCreateFullTextStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlShowDbLockStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlShowFullTextStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlShowHtcStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/MysqlShowStcStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/SQLAlterResourceGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/SQLCreateResourceGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/ast/statement/SQLListResourceGroupStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/parser/MySqlCreateTableParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/parser/MySqlExprParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/parser/MySqlLexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/parser/MySqlSelectIntoParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/parser/MySqlSelectParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/parser/MySqlStatementParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/visitor/MySqlASTVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/visitor/MySqlASTVisitorAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/visitor/MySqlEvalVisitorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/visitor/MySqlExportParameterVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/visitor/MySqlOutputVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/visitor/MySqlParameterizedVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/visitor/MySqlSchemaStatVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/mysql/visitor/MySqlShowColumnOutpuVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/OracleDataTypeIntervalDay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/OracleDataTypeIntervalYear.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/OracleSQLObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/OracleSQLObjectImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/OracleSegmentAttributes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/OracleSegmentAttributesImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/CycleClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/ModelClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/OracleLobStorageClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/OracleReturningClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/OracleStorageClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/OracleWithSubqueryEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/PartitionExtensionClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/SampleClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/clause/SearchClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleAnalytic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleAnalyticWindowing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleArgumentExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleBinaryDoubleExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleBinaryFloatExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleCursorExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleDatetimeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleIntervalExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleIntervalType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleIsOfTypeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleIsSetExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleOuterExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleRangeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleSysdateExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/expr/OracleTreatExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterSessionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterSynonymStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTableDropPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTableItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTableModify.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTableMoveTablespace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTableSplitPartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTableTruncatePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTablespaceAddDataFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTablespaceItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTablespaceStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterTriggerStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleAlterViewStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleContinueStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleCreateDatabaseDbLinkStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleCreateIndexStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleCreatePackageStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleCreateSynonymStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleCreateTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleCreateTypeStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleDDLStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleDeleteStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleDropDbLinkStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleExceptionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleExecuteImmediateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleExitStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleExplainStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleFileSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleForStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleForeignKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleGotoStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleInsertStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleLabelStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleLobParameters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleLockTableStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleMultiInsertStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OraclePipeRowStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OraclePrimaryKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleRaiseStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleRunStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectJoin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectPivot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectPivotBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectQueryBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectRestriction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectSubqueryTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectTableReference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectTableSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSelectUnPivot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSetTransactionStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleStatementImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSupplementalIdKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleSupplementalLogGrp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleUnique.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleUpdateStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleUsingIndexClause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/ast/stmt/OracleXmlColumnProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/parser/OracleCreateTableParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/parser/OracleExprParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/parser/OracleFunctionDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/parser/OracleLexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/parser/OracleProcedureDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/parser/OracleSelectParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/parser/OracleStatementParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/parser/OracleUpdateParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleASTParameterizedVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleASTVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleASTVisitorAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleEvalVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleExportParameterVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleOutputVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleParameterizedOutputVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleSchemaStatVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/oracle/visitor/OracleToMySqlOutputVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/dialect/transact/ast/TransactSQLObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/CharTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/EOFParserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/InsertColumnsCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/Keywords.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/LayoutCharacters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/Lexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/NotAllowCommentException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/ParserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLCreateTableParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLDDLParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLExprParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLInsertValueHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLParserFeature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLParserUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLSelectListCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLSelectParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLStatementParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SQLType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/SymbolTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/parser/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/MySqlHint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/Schema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/SchemaObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/SchemaObjectType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/SchemaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/SchemaResolveVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/SchemaResolveVisitorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/function/Function.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/function/FunctionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/repository/function/FunctionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/semantic/SemanticException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/ExportParameterVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/ExportParameterVisitorUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/ExportParameterizedOutputVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/ParameterizedOutputVisitorUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/ParameterizedVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/PrintableVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SQLASTOutputVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SQLASTParameterizedVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SQLASTVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SQLASTVisitorAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SQLEvalVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SQLEvalVisitorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SQLEvalVisitorUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SchemaStatVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/VisitorFeature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Ascii.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Bin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/BitLength.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Char.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Concat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/DateAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Elt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Function.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Greatest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Hex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/If.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/IfNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Insert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Instr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Isnull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Lcase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Least.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Left.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Length.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Locate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Lpad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Ltrim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Nil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Now.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/OneParamFunctions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Reverse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Right.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Substring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/ToChar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/ToDate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Trim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Ucase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/functions/Unhex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/stat/TableStat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/support/json/JSONParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/support/json/JSONUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/support/json/JSONWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/support/logging/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/support/logging/LogFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/support/logging/NoLoggingImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/support/logging/Resources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/support/logging/SLF4JImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/FnvHash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/HexBin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/JdbcConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/JdbcUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/LRUCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/ListDG.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/MySqlUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/OracleUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/ResultSetConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/StringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/util/lang/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/parser/mysql/builtin_datatypes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/parser/mysql/keywords" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/parser/oracle/builtin_aggreagte_functions" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/parser/oracle/builtin_functions" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/parser/oracle/builtin_tables" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/parser/oracle/keywords" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SelectSqlTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$USER_HOME$/modules/mvn.repository" />
+        <option name="mavenHome" value="/opt/homebrew/Cellar/maven@3.5/3.5.4_1/libexec" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="/opt/homebrew/Cellar/maven@3.5/3.5.4_1/libexec/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="zulu-1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx2048m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="zulu-1.8" />
+  </component>
+  <component name="ProjectId" id="2HWGsllgqHSpPmGLBSloHhJMk6m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/parser/mysql" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.20803443" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/parser/mysql" />
+      <recent name="$PROJECT_DIR$/src/main/resources/parser" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MySqlAdapterUtils (1)">
+    <configuration name="MySqlAdapterUtils (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pers.qingyu.snowslide.adapter.MySqlAdapterUtils" />
+      <module name="snowslide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.qingyu.snowslide.adapter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlAdapterUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.alibaba.druid.adapter.MySqlAdapterUtils" />
+      <module name="snowslide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.alibaba.druid.adapter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MySqlAdapterUtils (1)" />
+        <item itemvalue="Application.MySqlAdapterUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dfa11ae8-6ed2-4d15-aedd-08726046dc1e" name="Changes" comment="" />
+      <created>1668393635127</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668393635127</updated>
+      <workItem from="1668393637410" duration="4514000" />
+      <workItem from="1668399242781" duration="208000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
