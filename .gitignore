@@ -1,4 +1,5 @@
 target
+.idea/
 
 !**/src/main/**
 !**/src/test/**

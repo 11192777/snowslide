@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql;
 
+import pers.qingyu.snowslide.adapter.mysql2oracle.visitor.InLimit1000Visitor;
 import pers.qingyu.snowslide.enumeration.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
@@ -1159,5 +1160,20 @@ public class SQLUtils {
         }
 
     }
+
+    /**
+     * <H2>MySQL -> Oracle 适配</H2>
+     *
+     * @param sql mysql
+     * @return  {@link java.lang.String} oracle sql.
+     * @author Qingyu.Meng
+     * @since 2022/11/15
+     */
+    public static String mysqlToOracle(String sql) {
+        SQLStatement sqlStatement = SQLUtils.parseSingleStatement(sql, DbType.mysql);
+        sqlStatement.accept(InLimit1000Visitor.getInstance());
+        return toOracleString(sqlStatement);
+    }
+
 }
 

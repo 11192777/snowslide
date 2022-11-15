@@ -18,15 +18,11 @@ package pers.qingyu.snowslide.util;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import pers.qingyu.snowslide.support.logging.Log;
-import pers.qingyu.snowslide.support.logging.LogFactory;
-
 /**
  * @author sandzhang[sandzhangtoo@gmail.com]
  */
 public class StringUtils {
 
-    private static final Log LOG = LogFactory.getLog(StringUtils.class);
 
     private StringUtils() {
     }
@@ -99,7 +95,6 @@ public class StringUtils {
         try {
             return Integer.parseInt(in);
         } catch (NumberFormatException e) {
-            LOG.warn("stringToInteger fail,string=" + in, e);
             return null;
         }
     }
