@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.util;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 
 public interface JdbcConstants {
 

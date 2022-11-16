@@ -32,7 +32,7 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.support.logging.Log;
 import pers.qingyu.snowslide.support.logging.LogFactory;
 

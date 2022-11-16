@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.parser;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSelectQueryBlock;
 import pers.qingyu.snowslide.sql.dialect.mysql.ast.statement.MySqlSelectQueryBlock;
 import pers.qingyu.snowslide.sql.dialect.mysql.parser.MySqlExprParser;

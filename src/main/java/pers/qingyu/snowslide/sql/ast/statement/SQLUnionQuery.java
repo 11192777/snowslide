@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.ast.statement;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.SQLDbTypedObject;
 import pers.qingyu.snowslide.sql.ast.SQLLimit;
 import pers.qingyu.snowslide.sql.ast.SQLObjectImpl;

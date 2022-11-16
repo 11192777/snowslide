@@ -1,6 +1,5 @@
-package pers.qingyu.snowslide.adapter.mysql2oracle.visitor;
+package pers.qingyu.snowslide.sql.visitor.mysql2oracle;
 
-import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLBinaryOpExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLBooleanExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLNumberExpr;
@@ -25,10 +24,12 @@ public class BooleanValueVisitor implements SQLASTVisitor {
         if (Objects.isNull(x.getRight()) || !(x.getRight() instanceof SQLBooleanExpr)) {
             return;
         }
-        x.setRight(new SQLNumberExpr(this.getBooleanNumber(x.getRight())));
+        x.setRight(new SQLNumberExpr(this.getBooleanNumber((SQLBooleanExpr) x.getRight())));
     }
 
-    private Number getBooleanNumber(SQLExpr right) {
+    private Number getBooleanNumber(SQLBooleanExpr right) {
+        //How do you think it's boolean field?
+        //if params has boolean field map. need cache?
         return String.valueOf(right).equalsIgnoreCase(Boolean.TRUE.toString()) ? TRUE : FALSE;
     }
 }

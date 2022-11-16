@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.ast;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.statement.SQLPrimaryKey;
 import pers.qingyu.snowslide.sql.dialect.mysql.visitor.MySqlASTVisitor;
 

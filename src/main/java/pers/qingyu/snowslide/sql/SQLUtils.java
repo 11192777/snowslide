@@ -16,8 +16,8 @@
 package pers.qingyu.snowslide.sql;
 
 import cn.hutool.core.util.ArrayUtil;
-import pers.qingyu.snowslide.adapter.mysql2oracle.visitor.InLimit1000Visitor;
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.sql.visitor.mysql2oracle.InLimit1000Visitor;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
 import pers.qingyu.snowslide.sql.ast.statement.*;
@@ -37,20 +37,17 @@ import pers.qingyu.snowslide.support.logging.LogFactory;
 import pers.qingyu.snowslide.util.*;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class SQLUtils {
-    public final static Charset UTF8 = Charset.forName("UTF-8");
+    public final static Charset UTF8 = StandardCharsets.UTF_8;
 
-    private final static SQLParserFeature[] FORMAT_DEFAULT_FEATURES = {
-            SQLParserFeature.KeepComments,
-            SQLParserFeature.EnableSQLBinaryOpExprGroup
-    };
+    private final static SQLParserFeature[] FORMAT_DEFAULT_FEATURES = {SQLParserFeature.KeepComments, SQLParserFeature.EnableSQLBinaryOpExprGroup};
 
     public static FormatOption DEFAULT_FORMAT_OPTION = new FormatOption(true, true);
-    public static FormatOption DEFAULT_LCASE_FORMAT_OPTION
-            = new FormatOption(false, true);
+    public static FormatOption DEFAULT_LCASE_FORMAT_OPTION = new FormatOption(false, true);
 
     private final static Log LOG = LogFactory.getLog(SQLUtils.class);
 
@@ -59,11 +56,7 @@ public class SQLUtils {
     }
 
     public static String toSQLString(SQLObject sqlObject, DbType dbType) {
-        return toSQLString(sqlObject, dbType, null, null);
-    }
-
-    public static String toSQLString(SQLObject sqlObject, DbType dbType, FormatOption option) {
-        return toSQLString(sqlObject, dbType, option, null);
+        return toSQLString(sqlObject, dbType, null);
     }
 
     public static String toSQLString(SQLObject sqlObject, DbType dbType, FormatOption option, VisitorFeature... features) {
@@ -90,8 +83,7 @@ public class SQLUtils {
 
         sqlObject.accept(visitor);
 
-        String sql = out.toString();
-        return sql;
+        return out.toString();
     }
 
     public static String toSQLString(SQLObject obj) {
@@ -112,7 +104,7 @@ public class SQLUtils {
     }
 
     public static String toMySqlString(SQLObject sqlObject) {
-        return toMySqlString(sqlObject, (FormatOption) null);
+        return toMySqlString(sqlObject, null);
     }
 
     public static String toMySqlStringIfNotNull(SQLObject sqlObject, String defaultStr) {
@@ -220,8 +212,7 @@ public class SQLUtils {
         return format(sql, dbType, parameters, option, FORMAT_DEFAULT_FEATURES);
     }
 
-    public static String format(String sql, DbType dbType, List<Object> parameters, FormatOption option,
-                                SQLParserFeature[] features) {
+    public static String format(String sql, DbType dbType, List<Object> parameters, FormatOption option, SQLParserFeature[] features) {
         try {
             SQLStatementParser parser = SQLParserUtils.createSQLStatementParser(sql, dbType, features);
             List<SQLStatement> statementList = parser.parseStatementList();
@@ -248,11 +239,7 @@ public class SQLUtils {
         return toSQLString(statementList, dbType, parameters, option, null);
     }
 
-    public static String toSQLString(List<SQLStatement> statementList
-            , DbType dbType
-            , List<Object> parameters
-            , FormatOption option
-            , Map<String, String> tableMapping) {
+    public static String toSQLString(List<SQLStatement> statementList, DbType dbType, List<Object> parameters, FormatOption option, Map<String, String> tableMapping) {
         StringBuilder out = new StringBuilder();
         SQLASTOutputVisitor visitor = createFormatOutputVisitor(out, statementList, dbType);
         if (parameters != null) {
@@ -300,15 +287,6 @@ public class SQLUtils {
                 }
             }
 
-//            {
-//                List<String> comments = stmt.getBeforeCommentsDirect();
-//                if (comments != null){
-//                    for(String comment : comments) {
-//                        visitor.printComment(comment);
-//                        visitor.println();
-//                    }
-//                }
-//            }
             stmt.accept(visitor);
 
             if (i == size - 1) {
@@ -368,10 +346,6 @@ public class SQLUtils {
         return createSchemaStatVisitor((SchemaRepository) null, dbType);
     }
 
-    public static SchemaStatVisitor createSchemaStatVisitor(SchemaRepository repository) {
-        return createSchemaStatVisitor(repository, repository.getDbType());
-    }
-
     public static SchemaStatVisitor createSchemaStatVisitor(SchemaRepository repository, DbType dbType) {
         if (repository == null) {
             repository = new SchemaRepository(dbType);
@@ -424,17 +398,7 @@ public class SQLUtils {
     }
 
     public static SQLStatement parseSingleStatement(String sql, DbType dbType, boolean keepComments) {
-        SQLStatementParser parser = SQLParserUtils.createSQLStatementParser(sql, dbType, keepComments);
-        List<SQLStatement> stmtList = parser.parseStatementList();
-
-        if (stmtList.size() > 1) {
-            throw new ParserException("multi-statement be found.");
-        }
-
-        if (parser.getLexer().token() != Token.EOF) {
-            throw new ParserException("syntax error. " + sql);
-        }
-        return stmtList.get(0);
+        return keepComments ? parseSingleStatement(sql, dbType, SQLParserFeature.KeepComments) : parseSingleStatement(sql, dbType);
     }
 
     public static SQLStatement parseSingleStatement(String sql, DbType dbType, SQLParserFeature... features) {
@@ -469,7 +433,7 @@ public class SQLUtils {
         if (dbType == null) {
             dbType = DbType.mysql;
         }
-        String formatMethod = "";
+        String formatMethod;
         if (DbType.mysql == dbType) {
             formatMethod = "STR_TO_DATE";
             if (StringUtils.isEmpty(pattern)) pattern = "%Y-%m-%d %H:%i:%s";
@@ -502,14 +466,12 @@ public class SQLUtils {
             stmtList.get(i).accept(visitor);
         }
 
-        String mysqlSql = out.toString();
-        return mysqlSql;
+        return out.toString();
 
     }
 
     public static String addCondition(String sql, String condition, DbType dbType) {
-        String result = addCondition(sql, condition, SQLBinaryOperator.BooleanAnd, false, dbType);
-        return result;
+        return addCondition(sql, condition, SQLBinaryOperator.BooleanAnd, false, dbType);
     }
 
     public static String addCondition(String sql, String condition, SQLBinaryOperator op, boolean left, DbType dbType) {
@@ -649,8 +611,7 @@ public class SQLUtils {
     }
 
     public static class FormatOption {
-        private int features = VisitorFeature.of(VisitorFeature.OutputUCase
-                , VisitorFeature.OutputPrettyFormat);
+        private int features = VisitorFeature.of(VisitorFeature.OutputUCase, VisitorFeature.OutputPrettyFormat);
 
         public FormatOption() {
 
@@ -718,31 +679,6 @@ public class SQLUtils {
     public static String refactor(String sql, DbType dbType, Map<String, String> tableMapping) {
         List<SQLStatement> stmtList = parseStatements(sql, dbType);
         return SQLUtils.toSQLString(stmtList, dbType, null, null, tableMapping);
-    }
-
-    public static long hash(String sql, DbType dbType) {
-        Lexer lexer = SQLParserUtils.createLexer(sql, dbType);
-
-        StringBuilder buf = new StringBuilder(sql.length());
-
-        for (; ; ) {
-            lexer.nextToken();
-
-            Token token = lexer.token();
-            if (token == Token.EOF) {
-                break;
-            }
-
-            if (token == Token.ERROR) {
-                return Utils.fnv_64(sql);
-            }
-
-            if (buf.length() != 0) {
-
-            }
-        }
-
-        return buf.hashCode();
     }
 
     public static SQLExpr not(SQLExpr expr) {
@@ -873,7 +809,7 @@ public class SQLUtils {
     }
 
     public static boolean nameEquals(String a, String b) {
-        if (a == b) {
+        if (Objects.equals(a, b)) {
             return true;
         }
 
@@ -903,11 +839,8 @@ public class SQLUtils {
         if (expr instanceof SQLBinaryOpExpr) {
             SQLBinaryOpExpr binaryOpExpr = (SQLBinaryOpExpr) expr;
             SQLBinaryOperator op = binaryOpExpr.getOperator();
-            if (op == SQLBinaryOperator.Add
-                    || op == SQLBinaryOperator.Subtract
-                    || op == SQLBinaryOperator.Multiply) {
-                return isValue(binaryOpExpr.getLeft())
-                        && isValue(binaryOpExpr.getRight());
+            if (op == SQLBinaryOperator.Add || op == SQLBinaryOperator.Subtract || op == SQLBinaryOperator.Multiply) {
+                return isValue(binaryOpExpr.getLeft()) && isValue(binaryOpExpr.getRight());
             }
         }
 
@@ -989,7 +922,7 @@ public class SQLUtils {
      * @param dbType
      */
     public static String sort(String sql, DbType dbType) {
-        List stmtList = SQLUtils.parseStatements(sql, DbType.oracle);
+        List<SQLStatement> stmtList = SQLUtils.parseStatements(sql, DbType.oracle);
         SQLCreateTableStatement.sort(stmtList);
         return SQLUtils.toSQLString(stmtList, dbType);
     }
@@ -1075,8 +1008,8 @@ public class SQLUtils {
     }
 
     public static SQLLimit getLimit(String query, DbType dbType) {
-        List stmtList = SQLUtils.parseStatements(query, dbType);
-        SQLStatement statement = (SQLStatement) stmtList.get(0);
+        List<SQLStatement> stmtList = SQLUtils.parseStatements(query, dbType);
+        SQLStatement statement = stmtList.get(0);
         return getLimit(statement, dbType);
     }
 
@@ -1123,7 +1056,7 @@ public class SQLUtils {
                 insertTemplate.cloneTo(subInsertStatement);
 
                 int fromIndex = i * size;
-                int toIndex = (fromIndex + size) > totalSize ? totalSize : fromIndex + size;
+                int toIndex = Math.min((fromIndex + size), totalSize);
                 List<SQLInsertStatement.ValuesClause> subValuesList = valuesList.subList(fromIndex, toIndex);
                 subInsertStatement.getValuesList().addAll(subValuesList);
 
@@ -1157,17 +1090,17 @@ public class SQLUtils {
     }
 
     /**
-     * @see SQLUtils#mysqlToOracle(String, SQLASTVisitor...) 
+     * @see SQLUtils#translateMysqlToOracle(String, SQLASTVisitor...)
      */
-    public static String mysqlToOracle(String sql) {
-        return mysqlToOracle(sql, InLimit1000Visitor.getInstance());
+    public static String translateMysqlToOracle(String sql) {
+        return translateMysqlToOracle(sql, InLimit1000Visitor.getInstance());
     }
 
     /**
-     * @see SQLUtils#mysqlToOracle(SQLObject, SQLASTVisitor...) 
+     * @see SQLUtils#translateMysqlToOracle(SQLObject, SQLASTVisitor...)
      */
-    public static String mysqlToOracle(String sql, SQLASTVisitor... visitors) {
-        return mysqlToOracle(SQLUtils.parseSingleStatement(sql, DbType.mysql), visitors);
+    public static String translateMysqlToOracle(String sql, SQLASTVisitor... visitors) {
+        return translateMysqlToOracle(SQLUtils.parseSingleStatement(sql, DbType.mysql), visitors);
     }
 
     /**
@@ -1179,14 +1112,14 @@ public class SQLUtils {
      * @author Qingyu.Meng
      * @since 2022/11/15
      */
-    public static String mysqlToOracle(SQLObject sqlObject, SQLASTVisitor... visitors) {
+    public static String translateMysqlToOracle(SQLObject sqlObject, SQLASTVisitor... visitors) {
         if (ArrayUtil.isNotEmpty(visitors)) {
             for (SQLASTVisitor visitor : visitors) {
                 if (Objects.isNull(visitor)) continue;
                 sqlObject.accept(visitor);
             }
         }
-        return toOracleString(sqlObject);
+        return toOracleString(sqlObject, new FormatOption());
     }
 }
 

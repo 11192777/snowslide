@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.repository;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.exception.FastsqlException;
 import pers.qingyu.snowslide.sql.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLDataType;
@@ -34,7 +34,6 @@ import pers.qingyu.snowslide.sql.ast.statement.SQLShowCreateTableStatement;
 import pers.qingyu.snowslide.sql.dialect.mysql.visitor.MySqlASTVisitorAdapter;
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.OracleCreateTableStatement;
 import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleASTVisitorAdapter;
-import pers.qingyu.snowslide.sql.repository.function.Function;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitorAdapter;
 import pers.qingyu.snowslide.support.logging.Log;
@@ -46,25 +45,19 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by wenshao on 03/06/2017.
  */
 public class SchemaRepository {
-    private static Log LOG = LogFactory.getLog(SchemaRepository.class);
+    private static final Log LOG = LogFactory.getLog(SchemaRepository.class);
 
     private   Schema                    defaultSchema;
     protected DbType                    dbType;
     protected DbType                    schemaDbType;
     protected SQLASTVisitor             consoleVisitor;
     protected Map<String, Schema>       schemas           = new LinkedHashMap<String, Schema>();
-    protected final Map<Long, Function> internalFunctions = new ConcurrentHashMap<Long, Function>(16, 0.75f, 1);
     protected SchemaLoader              schemaLoader;
-
-    public SchemaRepository() {
-
-    }
 
     public SchemaRepository(DbType dbType) {
         this (dbType, dbType);
@@ -96,10 +89,6 @@ public class SchemaRepository {
 
     public DbType getDbType() {
         return dbType;
-    }
-
-    public String getDefaultSchemaName() {
-        return getDefaultSchema().getName();
     }
 
     public void setDefaultSchema(String name) {

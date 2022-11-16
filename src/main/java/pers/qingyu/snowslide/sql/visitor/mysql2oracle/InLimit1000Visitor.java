@@ -1,4 +1,4 @@
-package pers.qingyu.snowslide.adapter.mysql2oracle.visitor;
+package pers.qingyu.snowslide.sql.visitor.mysql2oracle;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;

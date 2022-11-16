@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.parser;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.AutoIncrementType;
 import pers.qingyu.snowslide.sql.ast.SQLArrayDataType;

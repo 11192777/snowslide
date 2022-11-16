@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.visitor;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.exception.FastsqlException;
 import pers.qingyu.snowslide.sql.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
@@ -94,20 +94,10 @@ import static pers.qingyu.snowslide.sql.visitor.SQLEvalVisitor.EVAL_VALUE_NULL;
 
 public class SQLEvalVisitorUtils {
 
-    private static Map<String, Function> functions = new HashMap<String, Function>();
+    private static final Map<String, Function> functions = new HashMap<>();
 
     static {
         registerBaseFunctions();
-    }
-
-    public static Object evalExpr(DbType dbType, String expr, Object... parameters) {
-        SQLExpr sqlExpr = SQLUtils.toSQLExpr(expr, dbType);
-        return eval(dbType, sqlExpr, parameters);
-    }
-
-    public static Object evalExpr(DbType dbType, String expr, List<Object> parameters) {
-        SQLExpr sqlExpr = SQLUtils.toSQLExpr(expr);
-        return eval(dbType, sqlExpr, parameters);
     }
 
     public static Object eval(DbType dbType, SQLObject sqlObject, Object... parameters) {

@@ -1,9 +1,8 @@
 package custom;
 
 import cn.hutool.core.util.StrUtil;
-import custom.InLimit3Visitor;
-import pers.qingyu.snowslide.adapter.mysql2oracle.visitor.BooleanValueVisitor;
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.sql.visitor.mysql2oracle.BooleanValueVisitor;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLStatement;
 
@@ -27,7 +26,7 @@ public class TestHelper {
     }
 
     public static String mysqlToOracle(String sql) {
-        return SQLUtils.mysqlToOracle(sql, InLimit3Visitor.getInstance(), new BooleanValueVisitor());
+        return SQLUtils.translateMysqlToOracle(sql, InLimit3Visitor.getInstance(), new BooleanValueVisitor());
     }
 
     public static SQLStatement getStatement(String sql) {

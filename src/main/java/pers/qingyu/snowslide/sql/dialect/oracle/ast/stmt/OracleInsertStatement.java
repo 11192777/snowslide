@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.SQLCommentHint;
 import pers.qingyu.snowslide.sql.ast.SQLHint;
 import pers.qingyu.snowslide.sql.ast.statement.SQLErrorLoggingClause;

@@ -1,6 +1,6 @@
 package custom;
 
-import pers.qingyu.snowslide.adapter.mysql2oracle.visitor.InLimit1000Visitor;
+import pers.qingyu.snowslide.sql.visitor.mysql2oracle.InLimit1000Visitor;
 
 
 

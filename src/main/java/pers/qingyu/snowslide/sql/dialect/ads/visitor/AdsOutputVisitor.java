@@ -1,6 +1,6 @@
 package pers.qingyu.snowslide.sql.dialect.ads.visitor;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.statement.SQLAlterTableAddColumn;
 import pers.qingyu.snowslide.sql.ast.statement.SQLAssignItem;
 import pers.qingyu.snowslide.sql.ast.statement.SQLCreateTableStatement;

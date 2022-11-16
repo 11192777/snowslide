@@ -53,7 +53,7 @@ public enum SQLParserFeature {
     Presto,
     ;
 
-    private SQLParserFeature(){
+    SQLParserFeature(){
         mask = (1 << ordinal());
     }
 

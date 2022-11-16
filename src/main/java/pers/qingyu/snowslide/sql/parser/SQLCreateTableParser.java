@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.parser;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.SQLName;
 import pers.qingyu.snowslide.sql.ast.SQLPartitionBy;
 import pers.qingyu.snowslide.sql.ast.statement.*;

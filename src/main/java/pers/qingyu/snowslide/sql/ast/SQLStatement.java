@@ -15,12 +15,10 @@
  */
 package pers.qingyu.snowslide.sql.ast;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.visitor.VisitorFeature;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public interface SQLStatement extends SQLObject, SQLDbTypedObject {
     DbType       getDbType();

@@ -15,7 +15,7 @@ package pers.qingyu.snowslide.sql.ast.statement;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
 

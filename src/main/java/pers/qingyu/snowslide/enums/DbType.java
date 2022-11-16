@@ -1,4 +1,4 @@
-package pers.qingyu.snowslide.enumeration;
+package pers.qingyu.snowslide.enums;
 
 import pers.qingyu.snowslide.util.FnvHash;
 

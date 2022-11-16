@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.ast;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 
 public interface SQLDbTypedObject extends SQLObject {
     DbType getDbType();

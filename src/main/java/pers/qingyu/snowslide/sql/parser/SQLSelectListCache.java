@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.parser;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSelectQueryBlock;
 import pers.qingyu.snowslide.support.logging.Log;
 import pers.qingyu.snowslide.support.logging.LogFactory;

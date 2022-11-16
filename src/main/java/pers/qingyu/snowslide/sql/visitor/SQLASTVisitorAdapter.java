@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.visitor;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 
 public class SQLASTVisitorAdapter implements SQLASTVisitor {
     protected DbType dbType;

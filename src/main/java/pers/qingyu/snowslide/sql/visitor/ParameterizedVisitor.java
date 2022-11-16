@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.visitor;
 
-import pers.qingyu.snowslide.enumeration.DbType;
+import pers.qingyu.snowslide.enums.DbType;
 
 import java.util.List;
 
