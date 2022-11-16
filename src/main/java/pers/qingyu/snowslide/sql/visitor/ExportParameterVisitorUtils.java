@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.visitor;
 
+import pers.qingyu.snowslide.sql.ast.expr.SQLTempExpr;
 import pers.qingyu.snowslide.enumeration.DbType;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLObject;
@@ -68,10 +69,6 @@ public final class ExportParameterVisitorUtils {
 
         if (param instanceof SQLCharExpr) {
             value = ((SQLCharExpr) param).getText();
-            String vStr = (String) value;
-//            if (vStr.length() > 1) {
-//                value = StringUtils.removeNameQuotes(vStr);
-//            }
             replace = true;
         } else if ( param instanceof SQLNCharExpr) {
             value = ((SQLNCharExpr) param).getText();
@@ -93,6 +90,9 @@ public final class ExportParameterVisitorUtils {
             replace = true;
         } else if (param instanceof SQLTimeExpr) {
             value = ((SQLTimeExpr) param).getValue();
+            replace = true;
+        } else if (param instanceof SQLTempExpr) {
+            value = ((SQLTempExpr) param).getValue();
             replace = true;
         } else if (param instanceof SQLListExpr) {
             SQLListExpr list = ((SQLListExpr) param);
@@ -121,7 +121,6 @@ public final class ExportParameterVisitorUtils {
                 replace = true;
             }
         } else if (param instanceof SQLNullExpr) {
-            value = null;
             replace = true;
         }
 

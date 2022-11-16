@@ -76,7 +76,7 @@ public class SQLDropSequenceStatement extends SQLStatementImpl implements SQLDro
         }
 
         if (name instanceof SQLPropertyExpr) {
-            return ((SQLPropertyExpr) name).getOwnernName();
+            return ((SQLPropertyExpr) name).getOwnerName();
         }
 
         return null;

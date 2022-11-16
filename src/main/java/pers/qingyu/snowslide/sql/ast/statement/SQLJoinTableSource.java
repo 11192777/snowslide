@@ -391,8 +391,8 @@ public class SQLJoinTableSource extends SQLTableSourceImpl implements SQLReplace
                 SQLBinaryOpExpr on_ab_binaryOpExpr = (SQLBinaryOpExpr) on_ab;
                 if (on_ab_binaryOpExpr.getLeft() instanceof SQLPropertyExpr
                         && on_ab_binaryOpExpr.getRight() instanceof SQLPropertyExpr) {
-                    String leftOwnerName = ((SQLPropertyExpr) on_ab_binaryOpExpr.getLeft()).getOwnernName();
-                    String rightOwnerName = ((SQLPropertyExpr) on_ab_binaryOpExpr.getRight()).getOwnernName();
+                    String leftOwnerName = ((SQLPropertyExpr) on_ab_binaryOpExpr.getLeft()).getOwnerName();
+                    String rightOwnerName = ((SQLPropertyExpr) on_ab_binaryOpExpr.getRight()).getOwnerName();
 
                     if (rightJoin.containsAlias(leftOwnerName) && rightJoin.containsAlias(rightOwnerName)) {
                         on_ab_match = true;

@@ -67,8 +67,7 @@ public final class SQLPropertyExpr extends SQLExprImpl implements SQLName, SQLRe
         return this.owner;
     }
 
-    @Deprecated
-    public String getOwnernName() {
+    public String getOwnerName() {
         if (owner instanceof SQLName) {
             return ((SQLName) owner).toString();
         }
@@ -76,12 +75,9 @@ public final class SQLPropertyExpr extends SQLExprImpl implements SQLName, SQLRe
         return null;
     }
 
-    public String getOwnerName() {
-        if (owner instanceof SQLName) {
-            return ((SQLName) owner).toString();
-        }
-
-        return null;
+    public String getFullName() {
+        String ownerName = getOwnerName();
+        return ownerName == null ? getSimpleName() : ownerName.concat(".").concat(getSimpleName());
     }
 
     public void setOwner(SQLExpr owner) {

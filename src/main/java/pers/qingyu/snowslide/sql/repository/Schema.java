@@ -85,7 +85,7 @@ public class Schema {
         if (name != null && name.indexOf('.') != -1) {
             SQLExpr expr = SQLUtils.toSQLExpr(name, repository.dbType);
             if (expr instanceof SQLPropertyExpr) {
-                catalog = ((SQLPropertyExpr) expr).getOwnernName();
+                catalog = ((SQLPropertyExpr) expr).getOwnerName();
             }
         }
     }
@@ -254,7 +254,7 @@ public class Schema {
         }
 
         if (expr instanceof SQLPropertyExpr) {
-            String ownerName = ((SQLPropertyExpr) expr).getOwnernName();
+            String ownerName = ((SQLPropertyExpr) expr).getOwnerName();
             return findTable(tableSource, ownerName);
         }
 

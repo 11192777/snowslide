@@ -2795,8 +2795,8 @@ public class SchemaStatVisitor extends SQLASTVisitorAdapter {
 //            visit((SQLAggregateExpr) x);
         } else if (clazz == SQLBinaryOpExpr.class) {
             visit((SQLBinaryOpExpr) x);
-//        } else if (clazz == SQLCharExpr.class) {
-//            visit((SQLCharExpr) x);
+//        } else if (clazz == SQLTempExpr.class) {
+//            visit((SQLTempExpr) x);
 //        } else if (clazz == SQLNullExpr.class) {
 //            visit((SQLNullExpr) x);
 //        } else if (clazz == SQLIntegerExpr.class) {

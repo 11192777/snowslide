@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.visitor;
 
+import pers.qingyu.snowslide.sql.ast.expr.SQLTempExpr;
 import pers.qingyu.snowslide.enumeration.DbType;
 import pers.qingyu.snowslide.sql.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.*;
@@ -1244,6 +1245,8 @@ public class SQLASTOutputVisitor extends SQLASTVisitorAdapter implements Paramet
             visit((SQLInListExpr) x);
         } else if (clazz == SQLNotExpr.class) {
             visit((SQLNotExpr) x);
+        } else if (clazz == SQLTempExpr.class) {
+            visit((SQLTempExpr) x);
         } else {
             x.accept(this);
         }
@@ -2178,6 +2181,25 @@ public class SQLASTOutputVisitor extends SQLASTVisitorAdapter implements Paramet
         return false;
     }
 
+    public boolean visit(SQLTempExpr x) {
+        if (this.parameterized) {
+            print('?');
+            incrementReplaceCunt();
+
+            if(this.parameters != null){
+                ExportParameterVisitorUtils.exportParameter(this.parameters, x);
+            }
+            return false;
+        }
+
+        if (x.getValue() == null) {
+            print0(ucase ? "NULL" : "null");
+        } else {
+            print0(x.getValue());
+        }
+        return false;
+    }
+
     public boolean visit(SQLNumberExpr x) {
         if (this.parameterized) {
             print('?');
@@ -2973,9 +2995,14 @@ public class SQLASTOutputVisitor extends SQLASTVisitorAdapter implements Paramet
             return;
         }
 
-        if (param instanceof Number //
-            || param instanceof Boolean || param instanceof java.time.temporal.Temporal ) {
+        if (param instanceof Number || param instanceof Boolean || param instanceof java.time.temporal.Temporal) {
             print0(param.toString());
+            return;
+        }
+
+        if (param instanceof Target) {
+            SQLTempExpr targetExpr = new SQLTempExpr(new Target(param));
+            visit(targetExpr);
             return;
         }
 

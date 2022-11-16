@@ -15,10 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.ast.statement;
 
-import pers.qingyu.snowslide.sql.ast.SQLExpr;
-import pers.qingyu.snowslide.sql.ast.SQLLimit;
 import pers.qingyu.snowslide.sql.ast.SQLName;
-import pers.qingyu.snowslide.sql.ast.SQLOrderBy;
 import pers.qingyu.snowslide.sql.ast.expr.SQLPropertyExpr;
 import pers.qingyu.snowslide.sql.dialect.mysql.visitor.MySqlASTVisitor;
 
@@ -36,7 +33,7 @@ public class MySqlShowHMSMetaStatement extends MySqlStatementImpl implements MyS
 
     public String getSchema() {
         if (name instanceof SQLPropertyExpr) {
-            return ((SQLPropertyExpr) name).getOwnernName();
+            return ((SQLPropertyExpr) name).getOwnerName();
         }
         return null;
     }

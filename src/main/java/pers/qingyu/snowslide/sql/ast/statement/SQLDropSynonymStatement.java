@@ -78,7 +78,7 @@ public class SQLDropSynonymStatement extends SQLStatementImpl implements SQLDrop
         }
 
         if (name instanceof SQLPropertyExpr) {
-            return ((SQLPropertyExpr) name).getOwnernName();
+            return ((SQLPropertyExpr) name).getOwnerName();
         }
 
         return null;

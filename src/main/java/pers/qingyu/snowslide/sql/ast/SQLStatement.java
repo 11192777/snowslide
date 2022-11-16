@@ -33,5 +33,4 @@ public interface SQLStatement extends SQLObject, SQLDbTypedObject {
 
     String toString();
     String toString(VisitorFeature... features);
-    Map<Class<?>, List<SQLExpr>> registerMap = new HashMap<>();
 }

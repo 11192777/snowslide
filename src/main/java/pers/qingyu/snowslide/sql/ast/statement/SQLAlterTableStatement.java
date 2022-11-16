@@ -228,7 +228,7 @@ public class SQLAlterTableStatement extends SQLStatementImpl implements SQLDDLSt
         }
 
         if (name instanceof SQLPropertyExpr) {
-            return ((SQLPropertyExpr) name).getOwnernName();
+            return ((SQLPropertyExpr) name).getOwnerName();
         }
 
         return null;

@@ -510,7 +510,7 @@ public class SchemaRepository {
                 schema = ((SQLIdentifierExpr) owner).getName();
             } else if (owner instanceof SQLPropertyExpr){
                 schema = ((SQLPropertyExpr) owner).getName();
-                catalog = ((SQLPropertyExpr) owner).getOwnernName();
+                catalog = ((SQLPropertyExpr) owner).getOwnerName();
             } else {
                 return null;
             }
@@ -558,7 +558,7 @@ public class SchemaRepository {
     private boolean renameTable(SQLName name, SQLName to) {
         Schema schema;
         if (name instanceof SQLPropertyExpr) {
-            String schemaName = ((SQLPropertyExpr) name).getOwnernName();
+            String schemaName = ((SQLPropertyExpr) name).getOwnerName();
             schema = findSchema(schemaName);
         } else {
             schema = getDefaultSchema();

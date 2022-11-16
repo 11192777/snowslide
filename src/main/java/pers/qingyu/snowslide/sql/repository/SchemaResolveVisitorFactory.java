@@ -518,7 +518,7 @@ class SchemaResolveVisitorFactory {
                 SQLExpr tableExpr = ((SQLExprTableSource) table).getExpr();
                 if (tableExpr instanceof SQLPropertyExpr
                         && ((SQLPropertyExpr) tableExpr).getName().equals("*")) {
-                    String alias = ((SQLPropertyExpr) tableExpr).getOwnernName();
+                    String alias = ((SQLPropertyExpr) tableExpr).getOwnerName();
                     SQLTableSource refTableSource = from.findTableSource(alias);
                     if (refTableSource != null) {
                         ((SQLPropertyExpr) tableExpr).setResolvedTableSource(refTableSource);
@@ -981,7 +981,7 @@ class SchemaResolveVisitorFactory {
                 SQLPropertyExpr propertyExpr = (SQLPropertyExpr) expr;
                 visitor.visit(propertyExpr);
 
-                String ownerName = propertyExpr.getOwnernName();
+                String ownerName = propertyExpr.getOwnerName();
                 if (propertyExpr.getName().equals("*")) {
                     if (visitor.isEnabled(SchemaResolveVisitor.Option.ResolveAllColumn)) {
                         SQLTableSource tableSource = x.findTableSource(ownerName);
@@ -993,7 +993,7 @@ class SchemaResolveVisitorFactory {
                 if (column != null) {
                     continue;
                 }
-                SQLTableSource tableSource = x.findTableSource(propertyExpr.getOwnernName());
+                SQLTableSource tableSource = x.findTableSource(propertyExpr.getOwnerName());
                 if (tableSource != null) {
                     column = tableSource.findColumn(propertyExpr.nameHashCode64());
                     if (column != null) {

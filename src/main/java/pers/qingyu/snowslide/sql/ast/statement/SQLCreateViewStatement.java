@@ -79,7 +79,7 @@ public class SQLCreateViewStatement extends SQLStatementImpl implements SQLCreat
         }
 
         if (name instanceof SQLPropertyExpr) {
-            return ((SQLPropertyExpr) name).getOwnernName();
+            return ((SQLPropertyExpr) name).getOwnerName();
         }
 
         return null;

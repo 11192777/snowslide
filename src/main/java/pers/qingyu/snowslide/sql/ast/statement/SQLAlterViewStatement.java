@@ -80,7 +80,7 @@ public class SQLAlterViewStatement extends SQLStatementImpl implements SQLCreate
         }
 
         if (name instanceof SQLPropertyExpr) {
-            return ((SQLPropertyExpr) name).getOwnernName();
+            return ((SQLPropertyExpr) name).getOwnerName();
         }
 
         return null;

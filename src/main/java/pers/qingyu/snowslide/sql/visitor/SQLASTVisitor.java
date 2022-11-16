@@ -17,6 +17,7 @@
  */
 package pers.qingyu.snowslide.sql.visitor;
 
+import pers.qingyu.snowslide.sql.ast.expr.SQLTempExpr;
 import pers.qingyu.snowslide.sql.ast.SQLAdhocTableSource;
 import pers.qingyu.snowslide.sql.ast.SQLAnnIndex;
 import pers.qingyu.snowslide.sql.ast.SQLArgument;
@@ -360,6 +361,9 @@ public interface SQLASTVisitor {
     default void endVisit(SQLCharExpr x) {
     }
 
+    default void endVisit(SQLTempExpr x) {
+    }
+
     default void endVisit(SQLIdentifierExpr x) {
     }
 
@@ -447,6 +451,10 @@ public interface SQLASTVisitor {
     }
 
     default boolean visit(SQLCharExpr x) {
+        return true;
+    }
+
+    default boolean visit(SQLTempExpr x) {
         return true;
     }
 

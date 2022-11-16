@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfa11ae8-6ed2-4d15-aedd-08726046dc1e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/adapter/mysql2oracle/visitor/InLimit1000Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/adapter/mysql2oracle/visitor/InLimit1000Visitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/adapter/mysql2oracle/visitor/BooleanValueVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sql/DeleteLimit1000Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sql/InsertLimit1000Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sql/SelectBooleanValueTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sql/SelectLimit1000Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sql/UpdateLimit1000Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/SQLUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/SQLUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sql/SelectTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sql/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/custom/TestHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,44 +97,82 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SelectTests.case2">
-    <configuration name="MySqlAdapterUtils (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pers.qingyu.snowslide.adapter.MySqlAdapterUtils" />
+  <component name="RunManager">
+    <configuration name="InsertLimit1000Tests.case0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="snowslide" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pers.qingyu.snowslide.adapter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MySqlAdapterUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.alibaba.druid.adapter.MySqlAdapterUtils" />
-      <module name="snowslide" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.alibaba.druid.adapter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SelectTests.case2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="snowslide" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sql.*" />
+          <option name="PATTERN" value="custom.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sql" />
-      <option name="MAIN_CLASS_NAME" value="sql.SelectTests" />
-      <option name="METHOD_NAME" value="case2" />
+      <option name="MAIN_CLASS_NAME" value="sql.InsertLimit1000Tests" />
+      <option name="METHOD_NAME" value="case0" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SelectBooleanValueTests.case10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="snowslide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="custom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sql" />
+      <option name="MAIN_CLASS_NAME" value="sql.SelectBooleanValueTests" />
+      <option name="METHOD_NAME" value="case10" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SelectBooleanValueTests.case11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="snowslide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="custom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sql" />
+      <option name="MAIN_CLASS_NAME" value="sql.SelectBooleanValueTests" />
+      <option name="METHOD_NAME" value="case11" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SelectBooleanValueTests.case3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="snowslide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="custom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sql" />
+      <option name="MAIN_CLASS_NAME" value="sql.SelectBooleanValueTests" />
+      <option name="METHOD_NAME" value="case3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SelectBooleanValueTests.case9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="snowslide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="custom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sql" />
+      <option name="MAIN_CLASS_NAME" value="sql.SelectBooleanValueTests" />
+      <option name="METHOD_NAME" value="case9" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,9 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SelectTests.case2" />
-        <item itemvalue="Application.MySqlAdapterUtils (1)" />
-        <item itemvalue="Application.MySqlAdapterUtils" />
+        <item itemvalue="JUnit.SelectBooleanValueTests.case11" />
+        <item itemvalue="JUnit.InsertLimit1000Tests.case0" />
+        <item itemvalue="JUnit.SelectBooleanValueTests.case3" />
+        <item itemvalue="JUnit.SelectBooleanValueTests.case10" />
+        <item itemvalue="JUnit.SelectBooleanValueTests.case9" />
       </list>
     </recent_temporary>
   </component>
@@ -151,11 +198,87 @@
       <updated>1668393635127</updated>
       <workItem from="1668393637410" duration="4514000" />
       <workItem from="1668399242781" duration="208000" />
+      <workItem from="1668561809950" duration="12538000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/visitor/SchemaStatVisitor.java</url>
+          <line>1789</line>
+          <properties class="pers.qingyu.snowslide.sql.visitor.SchemaStatVisitor" method="endVisit">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLTextLiteralExpr.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLCharExpr.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLTextLiteralExpr.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLTextLiteralExpr.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/ast/expr/SQLTextLiteralExpr.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

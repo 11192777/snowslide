@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql;
 
+import cn.hutool.core.util.ArrayUtil;
 import pers.qingyu.snowslide.adapter.mysql2oracle.visitor.InLimit1000Visitor;
 import pers.qingyu.snowslide.enumeration.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
@@ -30,20 +31,14 @@ import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleSchemaStatVisitor;
 import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleToMySqlOutputVisitor;
 import pers.qingyu.snowslide.sql.parser.*;
 import pers.qingyu.snowslide.sql.repository.SchemaRepository;
-import pers.qingyu.snowslide.sql.visitor.SQLASTOutputVisitor;
-import pers.qingyu.snowslide.sql.visitor.SQLASTVisitorAdapter;
-import pers.qingyu.snowslide.sql.visitor.SchemaStatVisitor;
-import pers.qingyu.snowslide.sql.visitor.VisitorFeature;
+import pers.qingyu.snowslide.sql.visitor.*;
 import pers.qingyu.snowslide.support.logging.Log;
 import pers.qingyu.snowslide.support.logging.LogFactory;
 import pers.qingyu.snowslide.util.*;
 
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TimeZone;
+import java.util.*;
 
 public class SQLUtils {
     public final static Charset UTF8 = Charset.forName("UTF-8");
@@ -1162,18 +1157,36 @@ public class SQLUtils {
     }
 
     /**
+     * @see SQLUtils#mysqlToOracle(String, SQLASTVisitor...) 
+     */
+    public static String mysqlToOracle(String sql) {
+        return mysqlToOracle(sql, InLimit1000Visitor.getInstance());
+    }
+
+    /**
+     * @see SQLUtils#mysqlToOracle(SQLObject, SQLASTVisitor...) 
+     */
+    public static String mysqlToOracle(String sql, SQLASTVisitor... visitors) {
+        return mysqlToOracle(SQLUtils.parseSingleStatement(sql, DbType.mysql), visitors);
+    }
+
+    /**
      * <H2>MySQL -> Oracle 适配</H2>
      *
-     * @param sql mysql
-     * @return  {@link java.lang.String} oracle sql.
+     * @param sqlObject
+     * @param visitors
+     * @return {@link java.lang.String} oracle sql.
      * @author Qingyu.Meng
      * @since 2022/11/15
      */
-    public static String mysqlToOracle(String sql) {
-        SQLStatement sqlStatement = SQLUtils.parseSingleStatement(sql, DbType.mysql);
-        sqlStatement.accept(InLimit1000Visitor.getInstance());
-        return toOracleString(sqlStatement);
+    public static String mysqlToOracle(SQLObject sqlObject, SQLASTVisitor... visitors) {
+        if (ArrayUtil.isNotEmpty(visitors)) {
+            for (SQLASTVisitor visitor : visitors) {
+                if (Objects.isNull(visitor)) continue;
+                sqlObject.accept(visitor);
+            }
+        }
+        return toOracleString(sqlObject);
     }
-
 }
 

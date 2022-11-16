@@ -166,7 +166,7 @@ public class SQLAlterSequenceStatement extends SQLStatementImpl implements SQLAl
         }
 
         if (name instanceof SQLPropertyExpr) {
-            return ((SQLPropertyExpr) name).getOwnernName();
+            return ((SQLPropertyExpr) name).getOwnerName();
         }
 
         return null;
