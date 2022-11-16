@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfa11ae8-6ed2-4d15-aedd-08726046dc1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/adapter/mysql2oracle/visitor/BooleanValueVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sql/DeleteLimit1000Tests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sql/InsertLimit1000Tests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sql/SelectBooleanValueTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sql/SelectLimit1000Tests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sql/UpdateLimit1000Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/SQLUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/qingyu/snowslide/sql/SQLUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sql/SelectTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sql/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/custom/TestHelper.java" afterDir="false" />
-    </list>
+    <list default="true" id="dfa11ae8-6ed2-4d15-aedd-08726046dc1e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +87,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.InsertLimit1000Tests.case0">
     <configuration name="InsertLimit1000Tests.case0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="snowslide" />
       <extension name="coverage">
@@ -199,6 +189,7 @@
       <workItem from="1668393637410" duration="4514000" />
       <workItem from="1668399242781" duration="208000" />
       <workItem from="1668561809950" duration="12538000" />
+      <workItem from="1668649091088" duration="940000" />
     </task>
     <servers />
   </component>
