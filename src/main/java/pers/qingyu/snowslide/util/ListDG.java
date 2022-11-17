@@ -66,7 +66,7 @@ public class ListDG {
         int elen = edges.size();
 
         // 初始化"顶点"
-        mVexs = new ArrayList<VNode>();
+        mVexs = new ArrayList<>();
         for (int i = 0; i < vlen; i++) {
             // 新建VNode
             VNode vnode = new VNode();
@@ -77,19 +77,17 @@ public class ListDG {
         }
 
         // 初始化"边"
-        for (int i = 0; i < elen; i++) {
+        for (Edge edge : edges) {
             // 读取边的起始顶点和结束顶点
-            Object c1 = edges.get(i).from;
-            Object c2 = edges.get(i).to;
             // 读取边的起始顶点和结束顶点
-            int p1 = getPosition(edges.get(i).from);
-            int p2 = getPosition(edges.get(i).to);
+            int p1 = getPosition(edge.from);
+            int p2 = getPosition(edge.to);
 
             // 初始化node1
             ENode node1 = new ENode();
             node1.ivex = p2;
             // 将node1链接到"p1所在链表的末尾"
-            if(mVexs.get(p1).firstEdge == null)
+            if (mVexs.get(p1).firstEdge == null)
                 mVexs.get(p1).firstEdge = node1;
             else
                 linkLast(mVexs.get(p1).firstEdge, node1);
@@ -261,26 +259,4 @@ public class ListDG {
         return true;
     }
 
-//    public static void main(String[] args) {
-//        Object[] vexs = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
-//        Edge[] edges = new Edge[]{
-//                new Edge(vexs[0], vexs[6]),
-//                new Edge(vexs[1], vexs[0]),
-//                new Edge(vexs[1], vexs[3]),
-//                new Edge(vexs[2], vexs[5]),
-//                new Edge(vexs[2], vexs[6]),
-//                new Edge(vexs[3], vexs[4]),
-//                new Edge(vexs[3], vexs[5])};
-//        ListDG pG;
-//
-//        // 自定义"图"(输入矩阵队列)
-//        //pG = new ListDG();
-//        // 采用已有的"图"
-//        pG = new ListDG(Arrays.asList(vexs), Arrays.asList(edges));
-//
-//        pG.print();   // 打印图
-//        //pG.DFS();     // 深度优先遍历
-//        //pG.BFS();     // 广度优先遍历
-//        pG.topologicalSort();     // 拓扑排序
-//    }
 }

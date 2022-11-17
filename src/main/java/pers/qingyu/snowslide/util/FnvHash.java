@@ -356,7 +356,7 @@ public final class FnvHash {
         return hashCode;
     }
 
-    public static interface Constants {
+    public interface Constants {
         long HIGH_PRIORITY = fnv1a_64_lower("HIGH_PRIORITY");
         long DISTINCTROW = fnv1a_64_lower("DISTINCTROW");
         long STRAIGHT = fnv1a_64_lower("STRAIGHT");

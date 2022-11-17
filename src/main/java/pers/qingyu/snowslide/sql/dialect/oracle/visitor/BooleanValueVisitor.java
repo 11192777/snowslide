@@ -1,4 +1,4 @@
-package pers.qingyu.snowslide.sql.visitor.mysql2oracle;
+package pers.qingyu.snowslide.sql.dialect.oracle.visitor;
 
 import pers.qingyu.snowslide.sql.ast.expr.SQLBinaryOpExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLBooleanExpr;

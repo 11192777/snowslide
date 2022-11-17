@@ -15,12 +15,10 @@
  */
 package pers.qingyu.snowslide.sql.visitor.functions;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLCharExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLMethodInvokeExpr;
 import pers.qingyu.snowslide.sql.visitor.SQLEvalVisitor;
-import pers.qingyu.snowslide.sql.visitor.SQLEvalVisitorUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

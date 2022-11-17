@@ -15,12 +15,12 @@
  */
 package pers.qingyu.snowslide.sql.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.SQLName;
 import pers.qingyu.snowslide.sql.ast.SQLPartitionBy;
 import pers.qingyu.snowslide.sql.ast.statement.*;
 import pers.qingyu.snowslide.sql.dialect.oracle.parser.OracleSelectParser;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.util.List;
 

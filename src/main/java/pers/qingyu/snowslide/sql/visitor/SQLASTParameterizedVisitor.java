@@ -15,8 +15,9 @@
  */
 package pers.qingyu.snowslide.sql.visitor;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLObject;
 import pers.qingyu.snowslide.sql.ast.expr.*;
@@ -24,7 +25,6 @@ import pers.qingyu.snowslide.sql.ast.statement.SQLInsertStatement;
 import pers.qingyu.snowslide.sql.ast.statement.SQLInsertStatement.ValuesClause;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSelectGroupByClause;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSelectOrderByItem;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.util.List;
 

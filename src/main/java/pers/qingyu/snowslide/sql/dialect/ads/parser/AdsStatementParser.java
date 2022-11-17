@@ -1,9 +1,9 @@
 package pers.qingyu.snowslide.sql.dialect.ads.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.SQLStatement;
 import pers.qingyu.snowslide.sql.ast.statement.*;
 import pers.qingyu.snowslide.sql.parser.*;
-import pers.qingyu.snowslide.util.FnvHash;
 
 public class AdsStatementParser extends SQLStatementParser {
     public AdsStatementParser(String sql) {

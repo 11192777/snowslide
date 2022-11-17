@@ -15,11 +15,10 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.ast.statement;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLCommentHint;
 import pers.qingyu.snowslide.sql.ast.SQLStatement;
 import pers.qingyu.snowslide.sql.dialect.mysql.visitor.MySqlASTVisitor;
-import pers.qingyu.snowslide.util.MySqlUtils;
 
 import java.util.List;
 

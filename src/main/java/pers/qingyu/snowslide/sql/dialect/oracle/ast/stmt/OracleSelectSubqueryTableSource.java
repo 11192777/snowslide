@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSelect;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSubqueryTableSource;
 import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleASTVisitor;

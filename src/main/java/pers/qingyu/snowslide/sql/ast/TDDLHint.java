@@ -1,5 +1,6 @@
 package pers.qingyu.snowslide.sql.ast;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.expr.SQLCharExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLIdentifierExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLPropertyExpr;
@@ -7,7 +8,6 @@ import pers.qingyu.snowslide.sql.dialect.mysql.parser.MySqlExprParser;
 import pers.qingyu.snowslide.sql.parser.Lexer;
 import pers.qingyu.snowslide.sql.parser.SQLParserFeature;
 import pers.qingyu.snowslide.sql.parser.Token;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.util.ArrayList;
 import java.util.List;

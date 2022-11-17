@@ -16,7 +16,7 @@
 package pers.qingyu.snowslide.sql.ast.statement;
 
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
 import pers.qingyu.snowslide.sql.dialect.mysql.ast.MySqlKey;
@@ -29,7 +29,6 @@ import pers.qingyu.snowslide.sql.semantic.SemanticException;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
 import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.util.ListDG;
-import pers.qingyu.snowslide.util.lang.Consumer;
 
 import java.util.*;
 
@@ -588,18 +587,6 @@ public class SQLCreateTableStatement extends SQLStatementImpl implements SQLDDLS
         }
 
         return null;
-    }
-
-    public void forEachColumn(Consumer<SQLColumnDefinition> columnConsumer) {
-        if (columnConsumer == null) {
-            return;
-        }
-
-        for (SQLTableElement element : this.tableElementList) {
-            if (element instanceof SQLColumnDefinition) {
-                columnConsumer.accept((SQLColumnDefinition) element);
-            }
-        }
     }
 
     public SQLPrimaryKey findPrimaryKey() {

@@ -1,10 +1,10 @@
 package custom;
 
-import cn.hutool.core.util.StrUtil;
-import pers.qingyu.snowslide.sql.visitor.mysql2oracle.BooleanValueVisitor;
+import pers.qingyu.snowslide.sql.dialect.oracle.visitor.BooleanValueVisitor;
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLStatement;
+import pers.qingyu.snowslide.util.StringUtils;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class TestHelper {
     }
 
     public static void print(Object o, Object... params) {
-        System.out.print(StrUtil.format(String.valueOf(o), params));
+        System.out.print(StringUtils.format(String.valueOf(o), params));
     }
 
     public static String mysqlToOracle(String sql) {

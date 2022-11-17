@@ -16,7 +16,7 @@
 package pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt;
 
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLStatementImpl;
 import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleASTVisitor;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;

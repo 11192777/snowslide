@@ -15,11 +15,9 @@
  */
 package pers.qingyu.snowslide.sql.ast.expr;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSelect;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSelectQueryBlock;
-import pers.qingyu.snowslide.sql.visitor.SQLASTOutputVisitor;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
 
 import java.io.Serializable;

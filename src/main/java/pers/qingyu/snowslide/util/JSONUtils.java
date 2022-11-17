@@ -15,16 +15,19 @@
  */
 package pers.qingyu.snowslide.util;
 
-import pers.qingyu.snowslide.enums.DbType;
+import pers.qingyu.snowslide.support.json.JSONParser;
+import pers.qingyu.snowslide.support.json.JSONWriter;
 
-public interface JdbcConstants {
+public class JSONUtils {
 
-    String ORACLE_DRIVER              = "oracle.jdbc.OracleDriver";
-    String ORACLE_DRIVER2             = "oracle.jdbc.driver.OracleDriver";
-
-    DbType MYSQL                      = DbType.mysql;
-    String MYSQL_DRIVER               = "com.mysql.jdbc.Driver";
-    String MYSQL_DRIVER_6             = "com.mysql.cj.jdbc.Driver";
-    String MYSQL_DRIVER_REPLICATE     = "com.mysql.jdbc.";
-
+    public static String toJSONString(Object o) {
+        JSONWriter writer = new JSONWriter();
+        writer.writeObject(o);
+        return writer.toString();
+    }
+    
+    public static Object parse(String text) {
+        JSONParser parser = new JSONParser(text);
+        return parser.parse();
+    }
 }

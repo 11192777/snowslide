@@ -15,8 +15,9 @@
  */
 package pers.qingyu.snowslide.sql.ast.expr;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.exception.FastsqlException;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleASTVisitor;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
@@ -421,7 +422,7 @@ public class SQLMethodInvokeExpr extends SQLExprImpl implements SQLReplaceable, 
             }
         }
 
-//        if (nameHash == FnvHash.Constants.ROUND) {
+//        if (nameHash == FnvHash.SqlDataTypeConstants.ROUND) {
 //            return resolvedReturnDataType = SQLDecimalExpr.DATA_TYPE;
 //        }
 

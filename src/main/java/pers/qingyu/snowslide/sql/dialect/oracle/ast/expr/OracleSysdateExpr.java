@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.ast.expr;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLObject;
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.OracleSQLObjectImpl;

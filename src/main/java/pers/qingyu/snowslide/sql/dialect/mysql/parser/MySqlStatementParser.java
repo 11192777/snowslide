@@ -15,8 +15,9 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.SQLParameter.ParameterType;
 import pers.qingyu.snowslide.sql.ast.expr.*;
@@ -6805,7 +6806,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         if (lexer.token() == Token.INDEX) {
                             lexer.nextToken();
                             alterIndex.setAnalyzerType(AnalyzerIndexType.INDEX);
-                        } else if (lexer.identifierEquals(FnvHash.Constants.QUERY)) {
+                        } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.QUERY)) {
                             lexer.nextToken();
                             alterIndex.setAnalyzerType(AnalyzerIndexType.QUERY);
                         }
@@ -6870,10 +6871,10 @@ public class MySqlStatementParser extends SQLStatementParser {
                 }
                 case DEFAULT: {
                     lexer.nextToken();
-                    if (lexer.identifierEquals(FnvHash.Constants.CHARACTER)) {
+                    if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.CHARACTER)) {
                         SQLAlterCharacter item = alterTableCharacter();
                         stmt.addItem(item);
-                    } else if (lexer.identifierEquals(FnvHash.Constants.COLLATE)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.COLLATE)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
@@ -6957,7 +6958,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                 case SET: {
                     lexer.nextToken();
 
-                    if (lexer.identifierEquals(FnvHash.Constants.RULE)) {
+                    if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.RULE)) {
                         SQLAlterTableSetOption setOption = new SQLAlterTableSetOption();
                         SQLAssignItem item = this.exprParser.parseAssignItem();
                         setOption.addOption(item);
@@ -6988,7 +6989,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                     break;
                 }
                 default: {
-                    if (lexer.identifierEquals(FnvHash.Constants.ADD)) {
+                    if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.ADD)) {
                         lexer.nextToken();
 
                         if (lexer.token() == Token.COLUMN) {
@@ -6996,11 +6997,11 @@ public class MySqlStatementParser extends SQLStatementParser {
                             parseAlterTableAddColumn(stmt);
                         } else if (lexer.token() == Token.INDEX
                                 || lexer.token() == Token.FULLTEXT
-                                || lexer.identifierEquals(FnvHash.Constants.SPATIAL)
-                                || lexer.identifierEquals(FnvHash.Constants.CLUSTERED)
-                                || lexer.identifierEquals(FnvHash.Constants.ANN)
-                                || lexer.identifierEquals(FnvHash.Constants.GLOBAL)
-                                || lexer.identifierEquals(FnvHash.Constants.LOCAL)) {
+                                || lexer.identifierEquals(FnvHash.SqlDataTypeConstants.SPATIAL)
+                                || lexer.identifierEquals(FnvHash.SqlDataTypeConstants.CLUSTERED)
+                                || lexer.identifierEquals(FnvHash.SqlDataTypeConstants.ANN)
+                                || lexer.identifierEquals(FnvHash.SqlDataTypeConstants.GLOBAL)
+                                || lexer.identifierEquals(FnvHash.SqlDataTypeConstants.LOCAL)) {
                             SQLAlterTableAddIndex item = parseAlterTableAddIndex();
                             item.setParent(stmt);
                             stmt.addItem(item);
@@ -7018,7 +7019,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                             SQLAlterTableAddIndex item = parseAlterTableAddIndex();
                             item.setParent(stmt);
                             stmt.addItem(item);
-                        } else if (lexer.identifierEquals(FnvHash.Constants.CLUSTERING)) {
+                        } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.CLUSTERING)) {
                             SQLAlterTableAddClusteringKey item = parseAlterTableAddClusteringKey();
                             item.setParent(stmt);
                             stmt.addItem(item);
@@ -7094,7 +7095,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                             }
 
                             stmt.addItem(item);
-                        } else if (lexer.identifierEquals(FnvHash.Constants.EXTPARTITION)) {
+                        } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.EXTPARTITION)) {
                             lexer.nextToken();
                             accept(Token.LPAREN);
                             SQLAlterTableAddExtPartition extPartitionItem = new SQLAlterTableAddExtPartition();
@@ -7105,7 +7106,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         } else {
                             parseAlterTableAddColumn(stmt);
                         }
-                    } else if (lexer.identifierEquals(FnvHash.Constants.CHANGE)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.CHANGE)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.COLUMN) {
                             lexer.nextToken();
@@ -7125,7 +7126,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                             }
                         }
                         stmt.addItem(item);
-                    } else if (lexer.identifierEquals(FnvHash.Constants.MODIFY)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.MODIFY)) {
                         lexer.nextToken();
 
                         if (lexer.token() == Token.COLUMN) {
@@ -7164,7 +7165,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         if (paren) {
                             accept(Token.RPAREN);
                         }
-                    } else if (lexer.identifierEquals(FnvHash.Constants.RENAME)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.RENAME)) {
                         lexer.nextToken();
 
                         if (lexer.token() == Token.INDEX) {
@@ -7239,7 +7240,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         }
 
                         stmt.addItem(item);
-                    } else if (lexer.identifierEquals(FnvHash.Constants.DISCARD)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.DISCARD)) {
                         lexer.nextToken();
 
                         if (lexer.token() == Token.PARTITION) {
@@ -7286,7 +7287,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                             MySqlAlterTableImportTablespace item = new MySqlAlterTableImportTablespace();
                             stmt.addItem(item);
                         }
-                    } else if (lexer.identifierEquals(FnvHash.Constants.FORCE)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.FORCE)) {
                         throw new ParserException("TODO " + lexer.info());
                     } else if (lexer.identifierEquals("COALESCE")) {
                         lexer.nextToken();
@@ -7320,7 +7321,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         }
                         accept(Token.RPAREN);
                         stmt.addItem(item);
-                    } else if (lexer.identifierEquals(FnvHash.Constants.EXCHANGE)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.EXCHANGE)) {
                         lexer.nextToken();
                         accept(Token.PARTITION);
 
@@ -7338,7 +7339,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                             lexer.nextToken();
                             acceptIdentifier("VALIDATION");
                             item.setValidation(true);
-                        } else if (lexer.identifierEquals(FnvHash.Constants.WITHOUT)) {
+                        } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.WITHOUT)) {
                             lexer.nextToken();
                             acceptIdentifier("VALIDATION");
                             item.setValidation(false);
@@ -7376,7 +7377,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         }
 
                         stmt.addItem(item);
-                    } else if (lexer.identifierEquals(FnvHash.Constants.PARTITIONS)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.PARTITIONS)) {
                         SQLAlterTablePartitionCount item = new SQLAlterTablePartitionCount();
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
@@ -7386,7 +7387,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         stmt.addItem(item);
                     } else if (lexer.token() == Token.PARTITION) {
                         lexer.nextToken();
-                        if(lexer.identifierEquals(FnvHash.Constants.LIFECYCLE)) {
+                        if(lexer.identifierEquals(FnvHash.SqlDataTypeConstants.LIFECYCLE)) {
                             lexer.nextToken();
                             SQLAlterTablePartitionLifecycle item = new SQLAlterTablePartitionLifecycle();
                             if (lexer.token() == Token.EQ) {
@@ -7395,9 +7396,9 @@ public class MySqlStatementParser extends SQLStatementParser {
                             item.setLifecycle((SQLIntegerExpr) exprParser.integerExpr());
                             stmt.addItem(item);
                         }
-                    } else if (lexer.identifierEquals(FnvHash.Constants.SUBPARTITION)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.SUBPARTITION)) {
                         lexer.nextToken();
-                        if (lexer.identifierEquals(FnvHash.Constants.LIFECYCLE)) {
+                        if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.LIFECYCLE)) {
                             lexer.nextToken();
                             SQLAlterTableSubpartitionLifecycle item = new SQLAlterTableSubpartitionLifecycle();
                             if (lexer.token() == Token.LITERAL_INT) {
@@ -7476,21 +7477,21 @@ public class MySqlStatementParser extends SQLStatementParser {
                         }
                         stmt.getTableOptions().put(AVG_ROW_LENGTH, this.exprParser.integerExpr());
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.CHECKSUM)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.CHECKSUM)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
                         }
                         stmt.getTableOptions().put(CHECKSUM2, this.exprParser.integerExpr());
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.CONNECTION)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.CONNECTION)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
                         }
                         stmt.getTableOptions().put(CONNECTION, this.exprParser.charExpr());
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.DATA) ||
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.DATA) ||
                             lexer.token() == Token.INDEX) {
                         boolean isIndex = lexer.token() == Token.INDEX;
                         lexer.nextToken();
@@ -7509,7 +7510,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         }
                         stmt.getTableOptions().put(DELAY_KEY_WRITE, this.exprParser.integerExpr());
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.ENCRYPTION)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.ENCRYPTION)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
@@ -7523,28 +7524,28 @@ public class MySqlStatementParser extends SQLStatementParser {
                         }
                         stmt.getTableOptions().put(INSERT_METHOD, this.exprParser.primary());
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.KEY_BLOCK_SIZE)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.KEY_BLOCK_SIZE)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
                         }
                         stmt.getTableOptions().put(KEY_BLOCK_SIZE2, this.exprParser.integerExpr());
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.MAX_ROWS)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.MAX_ROWS)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
                         }
                         stmt.getTableOptions().put(MAX_ROWS2, this.exprParser.integerExpr());
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.MIN_ROWS)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.MIN_ROWS)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
                         }
                         stmt.getTableOptions().put(MIN_ROWS2, this.exprParser.integerExpr());
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.PASSWORD)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.PASSWORD)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
@@ -7581,7 +7582,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         }
                         stmt.addItem(new MySqlAlterTableOption(TABLESPACE2, option));
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.COLLATE)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.COLLATE)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();
@@ -7603,11 +7604,11 @@ public class MySqlStatementParser extends SQLStatementParser {
                             stmt.getTableOptions().put("PACK_KEYS", this.exprParser.primary());
                         }
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.CHARACTER)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.CHARACTER)) {
                         SQLAlterCharacter item = alterTableCharacter();
                         stmt.addItem(item);
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.CLUSTERED)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.CLUSTERED)) {
                         SQLAlterTableModifyClusteredBy clusteredBy = new SQLAlterTableModifyClusteredBy();
 
                         acceptIdentifier("CLUSTERED");
@@ -7645,7 +7646,7 @@ public class MySqlStatementParser extends SQLStatementParser {
                         }
 
                         continue for_;
-                    } else if (lexer.identifierEquals(FnvHash.Constants.SUBPARTITION_AVAILABLE_PARTITION_NUM)) {
+                    } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.SUBPARTITION_AVAILABLE_PARTITION_NUM)) {
                         lexer.nextToken();
                         if (lexer.token() == Token.EQ) {
                             lexer.nextToken();

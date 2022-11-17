@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.SQLKeep.DenseRank;
@@ -1148,8 +1149,8 @@ public class OracleExprParser extends SQLExprParser {
             return dbLink;
         }
 //
-//        if (name.nameHashCode64() == FnvHash.Constants.UNSUPPORTED
-//                && lexer.identifierEquals(FnvHash.Constants.TYPE)) {
+//        if (name.nameHashCode64() == FnvHash.SqlDataTypeConstants.UNSUPPORTED
+//                && lexer.identifierEquals(FnvHash.SqlDataTypeConstants.TYPE)) {
 //            name = new SQLIdentifierExpr(name.getSimpleName() + " " + lexer.stringVal());
 //            lexer.nextToken();
 //        }

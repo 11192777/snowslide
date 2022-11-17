@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
 import pers.qingyu.snowslide.sql.ast.statement.*;
@@ -25,7 +26,6 @@ import pers.qingyu.snowslide.sql.dialect.mysql.ast.MysqlForeignKey;
 import pers.qingyu.snowslide.sql.dialect.mysql.ast.statement.*;
 import pers.qingyu.snowslide.sql.dialect.mysql.ast.statement.MySqlCreateTableStatement.TableSpaceOption;
 import pers.qingyu.snowslide.sql.parser.*;
-import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.util.MySqlUtils;
 
 public class MySqlCreateTableParser extends SQLCreateTableParser {

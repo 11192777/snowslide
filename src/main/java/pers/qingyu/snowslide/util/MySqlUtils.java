@@ -15,9 +15,6 @@
  */
 package pers.qingyu.snowslide.util;
 
-import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
-import pers.qingyu.snowslide.sql.ast.statement.SQLCreateTableStatement;
 
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
@@ -48,7 +45,7 @@ public class MySqlUtils {
         Set<String> words = keywords;
 
         if (words == null) {
-            words = new HashSet<String>();
+            words = new HashSet<>();
             Utils.loadFromFile("META-INF/druid/parser/mysql/keywords", words);
             keywords = words;
         }
@@ -76,92 +73,6 @@ public class MySqlUtils {
         return dataTypes.contains(table_lower);
     }
 
-    public static List<String> showTables(Connection conn) throws SQLException {
-        List<String> tables = new ArrayList<String>();
-
-        Statement stmt = null;
-        ResultSet rs = null;
-        try {
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery("show tables");
-            while (rs.next()) {
-                String tableName = rs.getString(1);
-                tables.add(tableName);
-            }
-        } finally {
-            JdbcUtils.close(rs);
-            JdbcUtils.close(stmt);
-        }
-
-        return tables;
-    }
-
-    public static List<String> getTableDDL(Connection conn, List<String> tables) throws SQLException {
-        List<String> ddlList = new ArrayList<String>();
-
-        Statement stmt = null;
-        try {
-            for (String table : tables) {
-                if (stmt == null) {
-                    stmt = conn.createStatement();
-                }
-
-                if (isKeyword(table)) {
-                    table = "`" + table + "`";
-                }
-
-                ResultSet rs = null;
-                try {
-                    rs = stmt.executeQuery("show create table " + table);
-                    if (rs.next()) {
-                        String ddl = rs.getString(2);
-                        ddlList.add(ddl);
-                    }
-                } finally {
-                    JdbcUtils.close(rs);
-                }
-            }
-        } finally {
-            JdbcUtils.close(stmt);
-        }
-
-
-        return ddlList;
-    }
-
-    public static String getCreateTableScript(Connection conn) throws SQLException {
-        return getCreateTableScript(conn, true, true);
-    }
-
-    public static String getCreateTableScript(Connection conn, boolean sorted, boolean simplify) throws SQLException {
-        List<String> tables = showTables(conn);
-        List<String> ddlList = getTableDDL(conn, tables);
-        StringBuilder buf = new StringBuilder();
-        for (String ddl : ddlList) {
-            buf.append(ddl);
-            buf.append(';');
-        }
-        String ddlScript = buf.toString();
-
-        if (! (sorted || simplify)) {
-            return ddlScript;
-        }
-
-        List stmtList = SQLUtils.parseStatements(ddlScript, DbType.mysql);
-        if (simplify) {
-            for (Object o : stmtList) {
-                if (o instanceof SQLCreateTableStatement) {
-                    SQLCreateTableStatement createTableStmt = (SQLCreateTableStatement) o;
-                    createTableStmt.simplify();
-                }
-            }
-        }
-
-        if (sorted) {
-            SQLCreateTableStatement.sort(stmtList);
-        }
-        return SQLUtils.toSQLString(stmtList, DbType.mysql);
-    }
 
     private static transient Class   class_connectionImpl                     = null;
     private static transient boolean class_connectionImpl_Error               = false;
@@ -212,137 +123,10 @@ public class MySqlUtils {
         return null;
     }
 
-    public static long getLastPacketReceivedTimeMs(Connection conn) throws SQLException {
-        if (class_connectionImpl == null && !class_connectionImpl_Error) {
-            try {
-                class_connectionImpl = Utils.loadClass("com.mysql.jdbc.MySQLConnection");
-                if (class_connectionImpl == null) {
-                    class_connectionImpl = Utils.loadClass("com.mysql.cj.MysqlConnection");
-                    if (class_connectionImpl != null) {
-                        mysqlJdbcVersion6 = true;
-                    }
-                }
-            } catch (Throwable error) {
-                class_connectionImpl_Error = true;
-            }
-        }
-
-        if (class_connectionImpl == null) {
-            return -1;
-        }
-
-        if(mysqlJdbcVersion6){
-            if (classJdbc == null) {
-                classJdbc = Utils.loadClass("com.mysql.cj.jdbc.JdbcConnection");
-            }
-
-            if (classJdbc == null) {
-                return -1;
-            }
-
-            if (getIdleFor == null && !getIdleForError) {
-                try {
-                    getIdleFor = classJdbc.getMethod("getIdleFor");
-                    getIdleFor.setAccessible(true);
-                } catch (Throwable error) {
-                    getIdleForError = true;
-                }
-            }
-
-            if (getIdleFor == null) {
-                return -1;
-            }
-
-            try {
-                Object connImpl = conn.unwrap(class_connectionImpl);
-                if (connImpl == null) {
-                    return -1;
-                }
-
-                return System.currentTimeMillis()
-                        - ((Long)
-                            getIdleFor.invoke(connImpl))
-                        .longValue();
-            } catch (Exception e) {
-                throw new SQLException("getIdleFor error", e);
-            }
-        } else {
-            if (method_getIO == null && !method_getIO_error) {
-                try {
-                    method_getIO = class_connectionImpl.getMethod("getIO");
-                } catch (Throwable error) {
-                    method_getIO_error = true;
-                }
-            }
-
-            if (method_getIO == null) {
-                return -1;
-            }
-
-            if (class_MysqlIO == null && !class_MysqlIO_Error) {
-                try {
-                    class_MysqlIO = Utils.loadClass("com.mysql.jdbc.MysqlIO");
-                } catch (Throwable error) {
-                    class_MysqlIO_Error = true;
-                }
-            }
-
-            if (class_MysqlIO == null) {
-                return -1;
-            }
-
-            if (method_getLastPacketReceivedTimeMs == null && !method_getLastPacketReceivedTimeMs_error) {
-                try {
-                    Method method = class_MysqlIO.getDeclaredMethod("getLastPacketReceivedTimeMs");
-                    method.setAccessible(true);
-                    method_getLastPacketReceivedTimeMs = method;
-                } catch (Throwable error) {
-                    method_getLastPacketReceivedTimeMs_error = true;
-                }
-            }
-
-            if (method_getLastPacketReceivedTimeMs == null) {
-                return -1;
-            }
-
-            try {
-                Object connImpl = conn.unwrap(class_connectionImpl);
-                if (connImpl == null) {
-                    return -1;
-                }
-
-                Object mysqlio = method_getIO.invoke(connImpl);
-                return (Long) method_getLastPacketReceivedTimeMs.invoke(mysqlio);
-            } catch (Exception e) {
-                throw new SQLException("getLastPacketReceivedTimeMs error", e);
-            }
-        }
-    }
 
     static Class<?> class_5_CommunicationsException = null;
     static Class<?> class_6_CommunicationsException = null;
 
-    public static Class getCommunicationsExceptionClass() {
-        if (class_5_CommunicationsException != null) {
-            return class_5_CommunicationsException;
-        }
-
-        if (class_6_CommunicationsException != null) {
-            return class_6_CommunicationsException;
-        }
-
-        class_5_CommunicationsException = Utils.loadClass("com.mysql.jdbc.CommunicationsException");
-        if (class_5_CommunicationsException != null) {
-            return class_5_CommunicationsException;
-        }
-
-        class_6_CommunicationsException = Utils.loadClass("com.mysql.cj.jdbc.exceptions.CommunicationsException");
-        if (class_6_CommunicationsException != null) {
-            return class_6_CommunicationsException;
-        }
-
-        return null;
-    }
 
     public final static Charset GBK                 = Charset.forName("GBK");
     public final static Charset BIG5                 = Charset.forName("BIG5");

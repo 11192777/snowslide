@@ -15,13 +15,13 @@
  */
 package pers.qingyu.snowslide.sql.ast.statement;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.FnvHash;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLCommentHint;
 import pers.qingyu.snowslide.sql.ast.SQLDataTypeImpl;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLIntegerExpr;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.sql.Types;
 import java.util.List;

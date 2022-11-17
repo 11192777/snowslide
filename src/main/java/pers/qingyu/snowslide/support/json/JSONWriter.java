@@ -27,11 +27,10 @@ import java.util.Map;
 
 public class JSONWriter {
 
-    private StringBuilder    out;
+    private final StringBuilder out;
 
 
-
-    public JSONWriter(){
+    public JSONWriter() {
         this.out = new StringBuilder();
     }
 
@@ -46,12 +45,12 @@ public class JSONWriter {
     public void writeArrayEnd() {
         write(']');
     }
-    
+
     public void writeNull() {
         write("null");
     }
-    
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public void writeObject(Object o) {
         if (o == null) {
             writeNull();
@@ -128,7 +127,7 @@ public class JSONWriter {
             writeMap((Map) o);
             return;
         }
-        
+
         if (o == SQLEvalVisitor.EVAL_VALUE_NULL) {
             write("null");
             return;
@@ -205,7 +204,7 @@ public class JSONWriter {
             writeNull();
             return;
         }
-        
+
         write('"');
         for (int i = 0; i < text.length(); ++i) {
             char c = text.charAt(i);
@@ -265,13 +264,13 @@ public class JSONWriter {
         int entryIndex = 0;
         write('{');
 
-        for (Object key : compositeData.getCompositeType().keySet()) {
+        for (String key : compositeData.getCompositeType().keySet()) {
             if (entryIndex != 0) {
                 write(',');
             }
-            writeString((String) key);
+            writeString(key);
             write(':');
-            Object value = compositeData.get((String) key);
+            Object value = compositeData.get(key);
             writeObject(value);
             entryIndex++;
         }

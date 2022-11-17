@@ -1,12 +1,12 @@
 package pers.qingyu.snowslide.sql.dialect.ads.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.statement.*;
 import pers.qingyu.snowslide.sql.parser.ParserException;
 import pers.qingyu.snowslide.sql.parser.SQLCreateTableParser;
 import pers.qingyu.snowslide.sql.parser.SQLExprParser;
 import pers.qingyu.snowslide.sql.parser.Token;
-import pers.qingyu.snowslide.util.FnvHash;
 
 public class AdsCreateTableParser extends SQLCreateTableParser {
     public AdsCreateTableParser(String sql) {

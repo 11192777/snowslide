@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.SQLIdentifierExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLNumericLiteralExpr;
@@ -29,7 +30,6 @@ import pers.qingyu.snowslide.sql.parser.Lexer;
 import pers.qingyu.snowslide.sql.parser.ParserException;
 import pers.qingyu.snowslide.sql.parser.SQLCreateTableParser;
 import pers.qingyu.snowslide.sql.parser.Token;
-import pers.qingyu.snowslide.util.FnvHash;
 
 public class OracleCreateTableParser extends SQLCreateTableParser {
 

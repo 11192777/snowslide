@@ -15,9 +15,10 @@
  */
 package pers.qingyu.snowslide.sql.visitor;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.expr.SQLTempExpr;
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
 import pers.qingyu.snowslide.sql.ast.statement.*;
@@ -37,7 +38,6 @@ import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.OracleForStatement;
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.OracleSelectPivot;
 import pers.qingyu.snowslide.sql.dialect.oracle.parser.OracleFunctionDataType;
 import pers.qingyu.snowslide.sql.dialect.oracle.parser.OracleProcedureDataType;
-import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.util.JdbcUtils;
 
 import java.io.IOException;

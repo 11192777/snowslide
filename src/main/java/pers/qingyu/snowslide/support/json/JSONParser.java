@@ -24,7 +24,7 @@ import pers.qingyu.snowslide.sql.parser.CharTypes;
 
 public class JSONParser {
 
-    private String text;
+    private final String text;
     private int    index = 0;
     private char   ch;
 
@@ -94,10 +94,7 @@ public class JSONParser {
         accept(Token.LBRACKET);
         ArrayList<Object> list = new ArrayList<Object>();
 
-        for (;;) {
-            if (token == Token.RBRACKET) {
-                break;
-            }
+        while (token != Token.RBRACKET) {
 
             if (token == Token.COMMA) {
                 nextToken();
@@ -116,10 +113,7 @@ public class JSONParser {
         accept(Token.LBRACE);
         Map<String, Object> map = new LinkedHashMap<String, Object>();
 
-        for (;;) {
-            if (token == Token.RBRACE) {
-                break;
-            }
+        while (token != Token.RBRACE) {
 
             if (token == Token.COMMA) {
                 nextToken();

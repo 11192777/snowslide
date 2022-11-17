@@ -15,8 +15,9 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.visitor;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLName;
 import pers.qingyu.snowslide.sql.ast.SQLObject;
@@ -36,7 +37,6 @@ import pers.qingyu.snowslide.sql.visitor.SchemaStatVisitor;
 import pers.qingyu.snowslide.stat.TableStat;
 import pers.qingyu.snowslide.stat.TableStat.Column;
 import pers.qingyu.snowslide.stat.TableStat.Mode;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.util.ArrayList;
 import java.util.List;

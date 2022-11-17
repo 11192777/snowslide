@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.SQLObject;
 import pers.qingyu.snowslide.sql.ast.expr.SQLNumberExpr;

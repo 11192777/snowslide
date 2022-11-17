@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package pers.qingyu.snowslide.sql;
+package pers.qingyu.snowslide.util;
 
 import cn.hutool.core.util.ArrayUtil;
-import pers.qingyu.snowslide.sql.visitor.mysql2oracle.InLimit1000Visitor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import pers.qingyu.snowslide.sql.dialect.oracle.visitor.InLimit1000Visitor;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
@@ -32,9 +34,6 @@ import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleToMySqlOutputVisit
 import pers.qingyu.snowslide.sql.parser.*;
 import pers.qingyu.snowslide.sql.repository.SchemaRepository;
 import pers.qingyu.snowslide.sql.visitor.*;
-import pers.qingyu.snowslide.support.logging.Log;
-import pers.qingyu.snowslide.support.logging.LogFactory;
-import pers.qingyu.snowslide.util.*;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

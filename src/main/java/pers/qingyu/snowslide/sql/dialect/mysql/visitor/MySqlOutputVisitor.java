@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.visitor;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;

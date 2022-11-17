@@ -16,7 +16,7 @@
 package pers.qingyu.snowslide.sql.ast.expr;
 
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLExprImpl;
 import pers.qingyu.snowslide.sql.ast.SQLReplaceable;

@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLObject;
 import pers.qingyu.snowslide.sql.ast.SQLSetQuantifier;
@@ -30,7 +31,6 @@ import pers.qingyu.snowslide.sql.parser.ParserException;
 import pers.qingyu.snowslide.sql.parser.SQLExprParser;
 import pers.qingyu.snowslide.sql.parser.SQLSelectParser;
 import pers.qingyu.snowslide.sql.parser.Token;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.util.ArrayList;
 import java.util.List;

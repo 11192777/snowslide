@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.ast.statement;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLIndexDefinition;
 import pers.qingyu.snowslide.sql.ast.SQLName;

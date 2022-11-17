@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
@@ -26,7 +27,6 @@ import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.OracleAlterTableSplitPa
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.OracleAlterTableSplitPartition.UpdateIndexesClause;
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.OracleLockTableStatement.LockMode;
 import pers.qingyu.snowslide.sql.parser.*;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.util.ArrayList;
 import java.util.List;

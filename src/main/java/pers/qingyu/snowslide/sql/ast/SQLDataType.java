@@ -30,17 +30,28 @@ public interface SQLDataType extends SQLObject {
     List<SQLExpr> getArguments();
 
     Boolean getWithTimeZone();
-    void  setWithTimeZone(Boolean value);
+
+    void setWithTimeZone(Boolean value);
 
     boolean isWithLocalTimeZone();
+
     void setWithLocalTimeZone(boolean value);
 
     SQLDataType clone();
 
     void setDbType(DbType dbType);
+
     DbType getDbType();
 
     int jdbcType();
+
+    boolean isInt();
+
+    boolean isNumberic();
+
+    boolean isString();
+
+    boolean hasKeyLength();
 
     interface Constants {
         String CHAR = "CHAR";
@@ -67,9 +78,4 @@ public interface SQLDataType extends SQLObject {
 
         String FLOAT = "FLOAT";
     }
-
-    boolean isInt();
-    boolean isNumberic();
-    public boolean isString();
-    public boolean hasKeyLength();
 }

@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
@@ -1107,7 +1108,7 @@ public class MySqlExprParser extends SQLExprParser {
         }
 
         if (lexer.identifierEquals(FnvHash.Constants.PRECISION)
-                && column.getDataType().nameHashCode64() ==FnvHash.Constants.DOUBLE) {
+                && column.getDataType().nameHashCode64() == FnvHash.Constants.DOUBLE) {
             lexer.nextToken();
         }
 
@@ -1384,7 +1385,7 @@ public class MySqlExprParser extends SQLExprParser {
 
         MySqlPrimaryKey primaryKey = new MySqlPrimaryKey();
 
-        if (lexer.identifierEquals(FnvHash.Constants.USING)) {
+        if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.USING)) {
             lexer.nextToken();
             primaryKey.setIndexType(lexer.stringVal());
             lexer.nextToken();
@@ -1434,14 +1435,14 @@ public class MySqlExprParser extends SQLExprParser {
                 lexer.nextToken();
                 SQLExpr comment = this.primary();
                 primaryKey.setComment(comment);
-            } else if (lexer.identifierEquals(FnvHash.Constants.KEY_BLOCK_SIZE)) {
+            } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.KEY_BLOCK_SIZE)) {
                 lexer.nextToken();
                 if (lexer.token() == Token.EQ) {
                     lexer.nextToken();
                 }
                 SQLExpr keyBlockSize = this.primary();
                 primaryKey.setKeyBlockSize(keyBlockSize);
-            } else if (lexer.identifierEquals(FnvHash.Constants.USING)) {
+            } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.USING)) {
                 lexer.nextToken();
                 primaryKey.setIndexType(lexer.stringVal());
                 accept(Token.IDENTIFIER);
@@ -1471,13 +1472,13 @@ public class MySqlExprParser extends SQLExprParser {
 
         MySqlUnique unique = new MySqlUnique();
 
-        if (lexer.token() != Token.LPAREN && !lexer.identifierEquals(FnvHash.Constants.USING)) {
+        if (lexer.token() != Token.LPAREN && !lexer.identifierEquals(FnvHash.SqlDataTypeConstants.USING)) {
             SQLName indexName = name();
             unique.setName(indexName);
         }
 
         //5.5语法 USING BTREE 放在index 名字后
-        if (lexer.identifierEquals(FnvHash.Constants.USING)) {
+        if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.USING)) {
             lexer.nextToken();
             unique.setIndexType(lexer.stringVal());
             lexer.nextToken();
@@ -1490,14 +1491,14 @@ public class MySqlExprParser extends SQLExprParser {
                 lexer.nextToken();
                 SQLExpr comment = this.primary();
                 unique.setComment(comment);
-            } else if (lexer.identifierEquals(FnvHash.Constants.KEY_BLOCK_SIZE)) {
+            } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.KEY_BLOCK_SIZE)) {
                 lexer.nextToken();
                 if (lexer.token() == Token.EQ) {
                     lexer.nextToken();
                 }
                 SQLExpr keyBlockSize = this.primary();
                 unique.setKeyBlockSize(keyBlockSize);
-            } else if (lexer.identifierEquals(FnvHash.Constants.USING)) {
+            } else if (lexer.identifierEquals(FnvHash.SqlDataTypeConstants.USING)) {
                 lexer.nextToken();
                 unique.setIndexType(lexer.stringVal());
                 accept(Token.IDENTIFIER);

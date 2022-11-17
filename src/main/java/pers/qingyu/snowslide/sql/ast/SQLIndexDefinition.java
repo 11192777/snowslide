@@ -1,5 +1,6 @@
 package pers.qingyu.snowslide.sql.ast;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.expr.SQLIdentifierExpr;
 import pers.qingyu.snowslide.sql.ast.statement.SQLAssignItem;
 import pers.qingyu.snowslide.sql.ast.statement.SQLSelectOrderByItem;

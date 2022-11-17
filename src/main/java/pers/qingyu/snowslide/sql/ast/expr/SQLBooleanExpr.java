@@ -27,6 +27,7 @@ import java.util.Collections;
 import java.util.List;
 
 public final class SQLBooleanExpr extends SQLExprImpl implements SQLExpr, SQLLiteralExpr, SQLValuableExpr {
+
     public static final SQLDataType DATA_TYPE = new SQLDataTypeImpl(SQLDataType.Constants.BOOLEAN);
 
     private boolean value;

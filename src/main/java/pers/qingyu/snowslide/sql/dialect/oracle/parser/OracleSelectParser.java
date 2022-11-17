@@ -15,6 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.parser;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
 import pers.qingyu.snowslide.sql.ast.statement.*;
@@ -22,7 +23,6 @@ import pers.qingyu.snowslide.sql.dialect.oracle.ast.clause.*;
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.clause.ModelClause.*;
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.*;
 import pers.qingyu.snowslide.sql.parser.*;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.util.List;
 

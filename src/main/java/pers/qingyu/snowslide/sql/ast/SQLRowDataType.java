@@ -1,8 +1,8 @@
 package pers.qingyu.snowslide.sql.ast;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
-import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.SQLStructDataType.Field;
 
 import java.sql.Types;

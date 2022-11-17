@@ -1,13 +1,13 @@
-package pers.qingyu.snowslide.sql.visitor.mysql2oracle;
+package pers.qingyu.snowslide.sql.dialect.oracle.visitor;
 
 import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.util.StrUtil;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLIdentifierExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLInListExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLPropertyExpr;
 import pers.qingyu.snowslide.sql.ast.expr.SQLTempExpr;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
+import pers.qingyu.snowslide.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -35,16 +35,16 @@ public class InLimit1000Visitor implements SQLASTVisitor {
         }
         ArrayList<SQLExpr> formatTargetList = new ArrayList<>(x.getTargetList().size());
         for (SQLExpr sqlExpr : x.getTargetList()) {
-            String formatItem = StrUtil.format(this.getItemFormat(), sqlExpr.toString());
+            String formatItem = StringUtils.format(this.getItemFormat(), sqlExpr.toString());
             formatTargetList.add(new SQLTempExpr(formatItem));
         }
         x.setTargetList(formatTargetList);
 
         if (x.getExpr() instanceof SQLIdentifierExpr) {
             SQLIdentifierExpr sqlIdentifierExpr = (SQLIdentifierExpr) x.getExpr();
-            sqlIdentifierExpr.setName(StrUtil.format(this.getItemFormat(), sqlIdentifierExpr.getName()));
+            sqlIdentifierExpr.setName(StringUtils.format(this.getItemFormat(), sqlIdentifierExpr.getName()));
         } else if (x.getExpr() instanceof SQLPropertyExpr) {
-            x.setExpr(new SQLIdentifierExpr(StrUtil.format(this.getItemFormat(), ((SQLPropertyExpr) x.getExpr()).getFullName())));
+            x.setExpr(new SQLIdentifierExpr(StringUtils.format(this.getItemFormat(), ((SQLPropertyExpr) x.getExpr()).getFullName())));
         }
     }
 

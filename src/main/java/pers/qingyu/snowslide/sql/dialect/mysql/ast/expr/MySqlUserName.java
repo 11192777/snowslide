@@ -15,7 +15,7 @@
  */
 package pers.qingyu.snowslide.sql.dialect.mysql.ast.expr;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLName;
 import pers.qingyu.snowslide.sql.ast.SQLObject;
 import pers.qingyu.snowslide.sql.ast.statement.SQLColumnDefinition;

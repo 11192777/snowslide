@@ -15,9 +15,12 @@
  */
 package pers.qingyu.snowslide.sql.repository;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.exception.FastsqlException;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLDataType;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLName;
@@ -36,9 +39,6 @@ import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.OracleCreateTableStatem
 import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleASTVisitorAdapter;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitorAdapter;
-import pers.qingyu.snowslide.support.logging.Log;
-import pers.qingyu.snowslide.support.logging.LogFactory;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.io.IOException;
 import java.util.Collection;

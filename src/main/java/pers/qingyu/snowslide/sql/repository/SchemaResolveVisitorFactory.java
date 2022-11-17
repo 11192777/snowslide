@@ -15,7 +15,8 @@
  */
 package pers.qingyu.snowslide.sql.repository;
 
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.FnvHash;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.*;
 import pers.qingyu.snowslide.sql.ast.expr.*;
 import pers.qingyu.snowslide.sql.ast.statement.*;
@@ -28,7 +29,6 @@ import pers.qingyu.snowslide.sql.dialect.mysql.visitor.MySqlASTVisitorAdapter;
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.*;
 import pers.qingyu.snowslide.sql.dialect.oracle.visitor.OracleASTVisitorAdapter;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitorAdapter;
-import pers.qingyu.snowslide.util.FnvHash;
 
 import java.util.ArrayList;
 import java.util.List;

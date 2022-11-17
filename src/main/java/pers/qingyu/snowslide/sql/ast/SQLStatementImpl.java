@@ -16,7 +16,7 @@
 package pers.qingyu.snowslide.sql.ast;
 
 import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.visitor.ParameterizedOutputVisitorUtils;
 import pers.qingyu.snowslide.sql.visitor.SQLASTVisitor;
 import pers.qingyu.snowslide.sql.visitor.VisitorFeature;

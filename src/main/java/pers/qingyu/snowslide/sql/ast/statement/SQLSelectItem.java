@@ -17,7 +17,7 @@ package pers.qingyu.snowslide.sql.ast.statement;
 
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.exception.FastsqlException;
-import pers.qingyu.snowslide.sql.SQLUtils;
+import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLDataType;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
 import pers.qingyu.snowslide.sql.ast.SQLObjectImpl;

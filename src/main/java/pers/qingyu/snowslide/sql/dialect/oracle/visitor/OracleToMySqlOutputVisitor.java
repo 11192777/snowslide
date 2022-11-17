@@ -15,14 +15,11 @@
  */
 package pers.qingyu.snowslide.sql.dialect.oracle.visitor;
 
+import pers.qingyu.snowslide.util.FnvHash;
 import pers.qingyu.snowslide.sql.ast.SQLExpr;
-import pers.qingyu.snowslide.sql.ast.expr.SQLBinaryOpExpr;
-import pers.qingyu.snowslide.sql.ast.expr.SQLBinaryOperator;
-import pers.qingyu.snowslide.sql.ast.expr.SQLIdentifierExpr;
-import pers.qingyu.snowslide.sql.ast.expr.SQLIntegerExpr;
+import pers.qingyu.snowslide.sql.ast.expr.*;
 import pers.qingyu.snowslide.sql.ast.statement.*;
 import pers.qingyu.snowslide.sql.dialect.oracle.ast.stmt.OracleSelectQueryBlock;
-import pers.qingyu.snowslide.util.FnvHash;
 
 public class OracleToMySqlOutputVisitor extends OracleOutputVisitor {
 
