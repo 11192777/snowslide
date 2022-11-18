@@ -1,6 +1,6 @@
 package custom;
 
-import pers.qingyu.snowslide.sql.dialect.oracle.visitor.InLimit1000Visitor;
+import pers.qingyu.sachima.sql.dialect.oracle.visitor.InLimit1000Visitor;
 
 
 

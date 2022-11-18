@@ -2,7 +2,7 @@ package sql;
 
 import custom.TestHelper;
 import org.junit.Test;
-import pers.qingyu.snowslide.sql.ast.SQLStatement;
+import pers.qingyu.sachima.sql.ast.SQLStatement;
 
 /**
  * <H1></H1>

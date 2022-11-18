@@ -1,10 +1,10 @@
 package custom;
 
-import pers.qingyu.snowslide.sql.dialect.mysql.visitor.impl.VisitorHandler;
-import pers.qingyu.snowslide.enums.DbType;
-import pers.qingyu.snowslide.util.SQLUtils;
-import pers.qingyu.snowslide.sql.ast.SQLStatement;
-import pers.qingyu.snowslide.util.StringUtils;
+import pers.qingyu.sachima.sql.dialect.mysql.visitor.impl.VisitorHandler;
+import pers.qingyu.sachima.enums.DbType;
+import pers.qingyu.sachima.util.SQLUtils;
+import pers.qingyu.sachima.sql.ast.SQLStatement;
+import pers.qingyu.sachima.util.StringUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
