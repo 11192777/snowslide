@@ -18,6 +18,8 @@ package pers.qingyu.snowslide.util;
 import cn.hutool.core.util.ArrayUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import pers.qingyu.snowslide.sql.dialect.mysql.visitor.MySqlToOracleOutputVisitor;
+import pers.qingyu.snowslide.sql.dialect.mysql.visitor.impl.VisitorHandler;
 import pers.qingyu.snowslide.sql.dialect.oracle.visitor.InLimit1000Visitor;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.sql.ast.*;
@@ -56,6 +58,33 @@ public class SQLUtils {
 
     public static String toSQLString(SQLObject sqlObject, DbType dbType) {
         return toSQLString(sqlObject, dbType, null);
+    }
+
+
+    /**
+     * <H2>format ? 要什么自行车</H2>
+     *
+     * @param sql
+     * @param handlers
+     * @param features
+     * @return  {@link java.lang.String}
+     * @author Qingyu.Meng
+     * @since 2022/11/18
+     */
+    public static <T> String translateMysqlToOracle(String sql, List<VisitorHandler.Handler<? extends SQLExprImpl>> handlers, VisitorFeature... features) {
+        StringBuilder appender = new StringBuilder();
+        MySqlToOracleOutputVisitor mySqlToOracleOutputVisitor = new MySqlToOracleOutputVisitor(appender, false, handlers);
+        int featuresValue = 0;
+        if (ArrayUtil.isNotEmpty(features)) {
+            //I advise you to be honest. don't use it.
+            for (VisitorFeature feature : features) {
+                mySqlToOracleOutputVisitor.config(feature, true);
+                featuresValue |= feature.mask;
+            }
+        }
+        mySqlToOracleOutputVisitor.setFeatures(featuresValue);
+        SQLUtils.parseSingleStatement(sql, DbType.mysql).accept(mySqlToOracleOutputVisitor);
+        return appender.toString();
     }
 
     public static String toSQLString(SQLObject sqlObject, DbType dbType, FormatOption option, VisitorFeature... features) {
@@ -309,9 +338,7 @@ public class SQLUtils {
         return createFormatOutputVisitor(out, null, dbType);
     }
 
-    public static SQLASTOutputVisitor createFormatOutputVisitor(Appendable out, //
-                                                                List<SQLStatement> statementList, //
-                                                                DbType dbType) {
+    public static SQLASTOutputVisitor createFormatOutputVisitor(Appendable out, List<SQLStatement> statementList, DbType dbType) {
         if (dbType == null) {
             if (statementList != null && statementList.size() > 0) {
                 dbType = statementList.get(0).getDbType();

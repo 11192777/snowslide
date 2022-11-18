@@ -1,12 +1,14 @@
 package custom;
 
-import pers.qingyu.snowslide.sql.dialect.oracle.visitor.BooleanValueVisitor;
+import pers.qingyu.snowslide.sql.dialect.mysql.visitor.impl.VisitorHandler;
 import pers.qingyu.snowslide.enums.DbType;
 import pers.qingyu.snowslide.util.SQLUtils;
 import pers.qingyu.snowslide.sql.ast.SQLStatement;
 import pers.qingyu.snowslide.util.StringUtils;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * <H1></H1>
@@ -26,7 +28,11 @@ public class TestHelper {
     }
 
     public static String mysqlToOracle(String sql) {
-        return SQLUtils.translateMysqlToOracle(sql, InLimit3Visitor.getInstance(), new BooleanValueVisitor());
+        return SQLUtils.translateMysqlToOracle(sql, Stream.of(
+                VisitorHandler.IN_LIST_EXPR,
+                VisitorHandler.BOOLEAN_VALUE_HANDLER,
+                VisitorHandler.SQL_METHOD_HANDLER
+        ).collect(Collectors.toList()));
     }
 
     public static SQLStatement getStatement(String sql) {
